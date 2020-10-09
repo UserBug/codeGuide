@@ -5,20 +5,20 @@
 
 ### Variables, functions, CSS classes
 should use CamelCase naming with lowercase first letter.
-##### BAD :cross_mark:
+##### :x: BAD
 ```javascript
 var MySomeVar = 3;
 let mysomeVar = 3;
-const MY_SOME_FUNCTION = () ={};
+const MY_SOME_FUNCTION = () => {};
 ```
 ```css
 .someCSSClass {}
 ```
 
-##### GOOD :heavy_check_mark:
+##### :heavy_check_mark: GOOD 
 ```javascript
 let mySomeVar = 3;
-const mySomeFunction = () ={};
+const mySomeFunction = () => {};
 ```
 ```css
 .someCssClass {}
@@ -28,17 +28,17 @@ const mySomeFunction = () ={};
 
 ### JS Classes
 All definitions of JS Classes should use CamelCase naming with uppercase first letter.
-##### BAD :cross_mark:
+##### :x: BAD
 ```javascript
 class myClass {};
 class MY_CLASS {};
-const myClass = () ={ /* constructor as function*/ };
+const myClass = () => { /* constructor as function*/ };
 ```
 
-##### GOOD :heavy_check_mark:
+##### :heavy_check_mark: GOOD 
 ```javascript
 class MyClass {};
-const MyClass = () ={ /* constructor as function*/ };
+const MyClass = () => { /* constructor as function*/ };
 ```
 
 ---
