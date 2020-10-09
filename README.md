@@ -43,6 +43,58 @@ const MyClass = () => { /* constructor as function*/ };
 
 ---
 
+### Constants
+All constants should use Snake case naming with all letters in uppercase.
+
+##### :x: BAD
+```javascript
+const MySomeConst = 3;
+const mysomeConst = 'a';
+const MY_SOME_CONST = () => {};
+```
+
+##### :heavy_check_mark: GOOD 
+```javascript
+const MY_SOME_CONST = 3;
+const mySomeConst = () => {};
+```
+
+---
+
+### URL 
+All URL paths should use the kebab case in lowercase.
+
+##### :x: BAD
+```
+www.site.com/MyURLPath
+www.site.com/MY-URL
+www.site.com/my_url
+```
+
+##### :heavy_check_mark: GOOD 
+```
+www.site.com/my-url
+```
+
+---
+
+### URL 
+All URL paths should use the kebab case in lowercase.
+
+##### :x: BAD
+```
+www.site.com/MyURLPath
+www.site.com/MY-URL
+www.site.com/my_url
+```
+
+##### :heavy_check_mark: GOOD 
+```
+www.site.com/my-url
+```
+
+---
+
 Copyright © 2017 Stanislav Kochenkov 
 
 
