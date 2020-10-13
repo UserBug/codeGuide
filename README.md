@@ -164,6 +164,54 @@ It is just one of many examples...<br>
 
 ---
 
+## Common JavaScript
+
+#### New variables should contain null
+All created, without any known values, new variables should contain null.<br>
+This rule helps to easily distinguish non-existent properties and variables from cleaned or already created but not have value.
+
+##### ❌ BAD
+```javascript
+let a;
+const obj = {
+    c: undefined,
+};
+
+console.log(a) // undefined
+console.log(obj.c) // undefined
+console.log(obj.b) // undefined
+```
+
+##### ✔ GOOD 
+```javascript
+let a = null;
+const obj = {
+    c: null,
+};
+
+console.log(a) // null
+console.log(obj.c) // null
+console.log(obj.b) // undefined
+```
+
+---
+
+#### Use arrow functions 
+in all cases when you don't need context of this particular function.
+
+##### ❌ BAD
+```javascript
+function sum ({ a, b }) {
+    return a + b;
+}
+```
+
+##### ✔ GOOD 
+```javascript
+const sum = ({ a, b }) => (a + b);
+```
+
+[When should I use Arrow functions in ECMAScript 6?](https://stackoverflow.com/questions/22939130/when-should-i-use-arrow-functions-in-ecmascript-6)
 
 Copyright © 2017 Stanislav Kochenkov 
 
