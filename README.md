@@ -5,7 +5,7 @@
 
 ### Variables, functions, CSS classes
 should use CamelCase naming with lowercase first letter.
-##### :x: BAD
+##### ❌ BAD
 ```javascript
 var MySomeVar = 3;
 let mysomeVar = 3;
@@ -15,7 +15,7 @@ const MY_SOME_FUNCTION = () => {};
 .someCSSClass {}
 ```
 
-##### :heavy_check_mark: GOOD 
+##### ✔ GOOD 
 ```javascript
 let mySomeVar = 3;
 const mySomeFunction = () => {};
@@ -28,14 +28,14 @@ const mySomeFunction = () => {};
 
 ### JS Classes
 All definitions of JS Classes should use CamelCase naming with uppercase first letter.
-##### :x: BAD
+##### ❌ BAD
 ```javascript
 class myClass {};
 class MY_CLASS {};
 const myClass = () => { /* constructor as function*/ };
 ```
 
-##### :heavy_check_mark: GOOD 
+##### ✔ GOOD 
 ```javascript
 class MyClass {};
 const MyClass = () => { /* constructor as function*/ };
@@ -46,14 +46,14 @@ const MyClass = () => { /* constructor as function*/ };
 ### Constants
 All constants should use Snake case naming with all letters in uppercase.
 
-##### :x: BAD
+##### ❌ BAD
 ```javascript
 const MySomeConst = 3;
 const mysomeConst = 'a';
 const MY_SOME_CONST = () => {};
 ```
 
-##### :heavy_check_mark: GOOD 
+##### ✔ GOOD 
 ```javascript
 const MY_SOME_CONST = 3;
 const mySomeConst = () => {};
@@ -64,14 +64,14 @@ const mySomeConst = () => {};
 ### URL 
 All URL paths should use the kebab case in lowercase.
 
-##### :x: BAD
+##### ❌ BAD
 ```
 www.site.com/MyURLPath
 www.site.com/MY-URL
 www.site.com/my_url
 ```
 
-##### :heavy_check_mark: GOOD 
+##### ✔ GOOD 
 ```
 www.site.com/my-url
 ```
@@ -96,12 +96,12 @@ Benefits:
 ### Self described file names
 All files and folders should have names that describe content. 
 
-:heavy_check_mark: For example:
+✔ For example:
 - If the file contains a list of constants which is exported, use the name "constants.js".
 - If there is some helper function which is exported by default, the file should have a name like the name of this function ("someHelperToDoCalculations.js").
 - File which export by default JS Class should be named as this Class with the first letter in uppercase. “MyClass.js”
 
-:x: Don't use common words like:
+❌ Don't use common words like:
 - "module" (use name of this module), 
 - "hoc" (use name of React class), 
 - "middleware" (use type of middleware or what it do)
@@ -114,7 +114,7 @@ Much more often it is necessary to modify one particular module than all files w
 - Repeatedly simplifies the replacement/modification of structure in the module.
 - Each module becomes independent, and can be implemented using a different architecture that better meets the requirements.
 
-##### :x: BAD
+##### ❌ BAD
 ```
 root
     components
@@ -131,7 +131,7 @@ root
         input
 ```
 
-##### :heavy_check_mark: GOOD 
+##### ✔ GOOD 
 ```
 root
     grid
