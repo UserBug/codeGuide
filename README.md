@@ -196,6 +196,43 @@ console.log(obj.b) // undefined
 
 ---
 
+#### Use destructuring in functions arguments 
+Benefits:
+
+* Eliminates dependence on order of arguments
+* Arguments become named
+
+##### ❌ BAD 
+```javascript
+const IN_BOX = 6;
+const calculatePrice = (itemPrice, count, discount = 1, balance = 0) => (
+  (itemPrice * count * discount) - balance 
+);
+
+const price = calculatePrice(
+  5,
+  IN_BOX,
+  1,
+  10
+);
+```
+
+##### ✔ GOOD 
+```javascript
+const IN_BOX = 6;
+const calculatePrice = ({ itemPrice, count, discount = 1, balance = 0 }) => (
+  (itemPrice * count * discount) - balance 
+);
+
+const price = calculatePrice({
+    count: IN_BOX,
+    itemPrice: 6,
+    balance: 10,
+});
+```
+
+---
+
 #### Use arrow functions 
 in all cases when you don't need context of this particular function.
 
@@ -212,6 +249,45 @@ const sum = ({ a, b }) => (a + b);
 ```
 
 [When should I use Arrow functions in ECMAScript 6?](https://stackoverflow.com/questions/22939130/when-should-i-use-arrow-functions-in-ecmascript-6)
+
+---
+
+#### Use public class fields syntax 
+Use the constructor only when necessary,<br>
+otherwise define public properties and methods in the class body.
+
+* Reduce amount of code
+* Autobinding
+
+##### ❌ BAD
+```javascript
+class Basket {
+  constructor () {
+    this.count = 0;
+    this.handleAdd = this.handleAdd.bind(this);
+  }
+
+  handleAdd({ add }) {
+    this.count += add;
+  }
+}
+```
+
+##### ✔ GOOD 
+```javascript
+class Basket {
+  count = 0;
+
+  handleAdd = ({ add }) => {
+    this.count += add;
+  };
+}
+```
+
+[React doc - Handling events](https://reactjs.org/docs/handling-events.html) <br>
+[React doc - Autobinding](https://reactjs.org/docs/react-without-es6.html#autobinding)
+
+
 
 Copyright © 2017 Stanislav Kochenkov 
 
