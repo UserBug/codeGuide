@@ -247,10 +247,43 @@ function sum ({ a, b }) {
 
 ##### ✔ GOOD 
 ```javascript
-const sum = ({ a, b }) => (a + b);
+const sum = ({ a, b }) => (a + b); // "sum" is named arrow function which has name in stacktrace
 ```
 
 [When should I use Arrow functions in ECMAScript 6?](https://stackoverflow.com/questions/22939130/when-should-i-use-arrow-functions-in-ecmascript-6)
+
+---
+
+#### Prefer single return
+It will be a single place you have to look to trace backwards and figure out what a function returns.  
+Easier to debug and easier to modify.  
+
+##### ❌ BAD
+```javascript
+const sayMyName = (who) => {
+  if (who === 'David Guetta') {
+    return `${who}: Say my name, say my name\n If you love me, let me hear you.`;
+  } else if (who === 'Breaking Bad') {
+    return `${who}: You all know exactly who I am. Say my name.`
+  }
+  return `${who}: I do not know.`;
+};
+```
+
+##### ✔ GOOD 
+```javascript
+const sayMyName = (who) => {
+  let partOfText = `${who}: I do not know.`;
+  if (who === 'David Guetta') {
+    partOfText = `${who}: Say my name, say my name\n If you love me, let me hear you.`;
+  } else if (who === 'Breaking Bad') {
+    partOfText = `${who}: You all know exactly who I am. Say my name.`
+  }
+  return partOfText;
+};
+```
+
+[airbnb - single return vs multiple returns](https://github.com/airbnb/javascript/issues/761)
 
 ---
 
@@ -344,7 +377,6 @@ const myAsyncFunction = (id) => (
 ```
 
 ---
-
 
 
 Copyright © 2017 Stanislav Kochenkov 
