@@ -389,6 +389,38 @@ but all this logs should be removed before code review and merge.
 
 ---
 
+#### JSDoc for static typing
+**JSDoc** - is a markup language used to annotate JavaScript source code files.  
+**TypeScript** - is a programming language.  
+
+Benefits of JSDoc:
+
+* Do not affect JavaScript syntax.
+* No compilation required.
+* As a result, they can be added at any time to any part of the code without additional changes.
+
+**JSDoc** allows you to add static typing of the code while staying with **JavaScript**.
+
+[Type Safe JavaScript and TypeScript with JSDoc](https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76)
+
+---
+
+#### Should I use TypeScript?
+
+Objective advantages of TypeScript that are not part of the HolyWar:
+
+* Syntax similarity to other typed languages
+* Small amount of additional syntax constructions not included in ECMAScript++
+
+Frequent misconceptions about TypeScript:
+
+* Provides only **Static Type-checking** at the time of writing code.  There are no type checks in the compiled code.  JavaScript can be typed with JSDoc.
+* TypeScript it is not ECMAScript. There is absolutely no guarantee that the TypeScript features will be included in the next ECMAScript.
+* At the moment (2020) there is no reliable and recommended way to run TypeScript for production either in the browser or on the server.
+
+**Summary:** The choice between TypeScript and JavaScript most of all depends on your taste preferences.
+
+---
 
 
 Copyright © 2017 Stanislav Kochenkov 
