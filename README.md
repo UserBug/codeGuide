@@ -156,10 +156,10 @@ root
 ---
 
 ### Don't use file extension “.jsx”.
-For example, we have 2 files in the "lib" folder: "MyClass.jsx" and "MyClass.js".<br>
-After compilation both of these files become "MyClass.js", which can lead to errors when using this file in the code.<br>
-It is just one of many examples...<br>
-**Summary**: JSX is not required anymore.<br>
+For example, we have 2 files in the "lib" folder: "MyClass.jsx" and "MyClass.js".  
+After compilation both of these files become "MyClass.js", which can lead to errors when using this file in the code.  
+It is just one of many examples...  
+**Summary**: JSX is not required anymore.  
 [Facebook issue](https://github.com/facebook/create-react-app/issues/87)
 
 ---
@@ -167,7 +167,7 @@ It is just one of many examples...<br>
 ## Common JavaScript
 
 #### New variables should contain null
-All created, without any known values, new variables should contain null.<br>
+All created, without any known values, new variables should contain null.  
 This rule helps to easily distinguish non-existent properties and variables from cleaned or already created but not have value.
 
 ##### ❌ BAD
@@ -196,7 +196,9 @@ console.log(obj.b) // undefined
 
 ---
 
-#### Use destructuring in functions arguments 
+#### Use destructuring in functions arguments
+If function accept more than one argument use destructuring.
+
 Benefits:
 
 * Eliminates dependence on order of arguments
@@ -253,7 +255,7 @@ const sum = ({ a, b }) => (a + b);
 ---
 
 #### Use public class fields syntax 
-Use the constructor only when necessary,<br>
+Use the constructor only when necessary,  
 otherwise define public properties and methods in the class body.
 
 * Reduce amount of code
@@ -284,8 +286,64 @@ class Basket {
 }
 ```
 
-[React doc - Handling events](https://reactjs.org/docs/handling-events.html) <br>
+[React doc - Handling events](https://reactjs.org/docs/handling-events.html)   
 [React doc - Autobinding](https://reactjs.org/docs/react-without-es6.html#autobinding)
+
+---
+
+#### Prefer Promise 
+Prefer Promise and Async functions instead of Callbacks.  
+Async functions as a very powerful tool of JavaScript.   
+Each Promise creates a new Microtask which can be executed in the Microtask queue of the Event Loop.   
+This architecture allows split calculations on "independent" tasks and does not block the whole Event Loop.   
+Callbacks in some cases can create synchronous chains that block the user interface.  
+
+[MDN - Using microtasks in JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide)
+
+---
+
+#### Prefer promise.catch()
+✎✎✎ to be discussed  
+try/catch will be executed synchronously.  
+If try{} receives an error, catch{} will execute immediately.  
+In contrast to this, promise.catch() will add new Microtask in Event Loop queue.  
+
+##### ❌ BAD
+```javascript
+const myAsyncFunction = async (id) => {
+  let result = null;
+  try {
+    const partA = await getPartA(id);
+    const partB = await getPartB(id);
+    result = { partA, partB };
+  } catch (err) { // The Catch block will be processed immediately, and not as a microtask
+    logError(error);
+  }
+
+  // Obviously this is the finally part
+  await logResult({ id, result });
+  return result;
+};
+```
+
+##### ✔ GOOD 
+```javascript
+const myAsyncFunction = (id) => (
+  Promise.resolve()
+    .then(async () => {
+      const partA = await getPartA(id);
+      const partB = await getPartB(id);
+      return { partA, partB };
+    }).catch(() => {
+      logError(error);
+      return null;
+    }).then(async (result) => {
+      await logResult({ id, result });
+    })
+);
+```
+
+---
 
 
 
