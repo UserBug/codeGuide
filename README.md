@@ -378,6 +378,18 @@ const myAsyncFunction = (id) => (
 
 ---
 
+#### No errors/warnings/logs in console
+Developer console is a very powerful and helpful tool.  
+It gives information to the developer about the health of the application.  
+Any message in there requires attention, and usually some action.  
+Errors and warnings are signals about existing bugs in the code.  
+Any ticket cannot be closed if there exist those messages in the console.  
+Showing some debug data in the consol it is helpful,  
+but all this logs should be removed before code review and merge.  
+
+---
+
+
 
 Copyright © 2017 Stanislav Kochenkov 
 
