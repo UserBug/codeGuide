@@ -410,7 +410,7 @@ Benefits of JSDoc:
 Objective advantages of TypeScript that are not part of the HolyWar:
 
 * Syntax similarity to other typed languages
-* Small amount of additional syntax constructions not included in ECMAScript++
+* Small amount of additional syntax constructions which are not included in ECMAScript++
 
 Frequent misconceptions about TypeScript:
 
