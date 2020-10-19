@@ -456,6 +456,58 @@ const renderAlert = () => (
 
 ---
 
+#### Remove unnecessary code
+All console logs should be deleted from files before the feature branch can be merged to the develop.  
+These unnecessary logs make it difficult for other developers to debug the code and can show private data.  
+
+Delete commented out parts of the code.  
+Blocks of code in the commentaries make it very difficult to read it and unnecessarily increase the size of the files.  
+
+---
+
+#### Use underscore for private methods and properties.
+One of good ways to make code more clear is to add underscore for private methods.  
+It helps developers to understand which methods and properties can be used outside the object.  
+
+##### ❌ BAD
+```javascript
+class MyBasket {
+    count = 0;
+    stock = [];
+    addToStock = (item) => {
+        this.stock.push(item);
+    }
+    increaseCount = () => {
+        this.count ++;
+    }
+    add = (item) => {
+        this.addToStock(item);
+        this.increaseCount();
+    }
+}
+```
+
+##### ✔ GOOD 
+```javascript
+class MyBasket {
+    _count = 0;
+    _stock = [];
+    _addToStock = (item) => {
+        this._stock.push(item);
+    }
+    _increaseCount = () => {
+        this._count ++;
+    }
+    add = (item) => {
+        this._addToStock(item);
+        this._increaseCount();
+    }
+}
+```
+
+---
+
+
 
 Copyright © 2017 Stanislav Kochenkov 
 
