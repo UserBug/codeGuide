@@ -74,3 +74,4 @@ www.site.com/my-url
 ```
 
 ---
+Copyright © 2017 Stanislav Kochenkov
