@@ -507,7 +507,31 @@ class MyBasket {
 
 ---
 
+#### Respect all eslint rules
+Eslint is a very important tool in the development. It can be distracting in the beginning, but it allow: 
 
+* Check correct syntax.
+* Perform static type checking.
+* Unify the design of code throughout the project for easy understanding.
+* Automatically fix minor problems, such as tabulation, spaces and quotation marks.
+* Avoid many errors on writing code stage.
+
+We are using list of Airbnb rules as common base,  
+all clarifications and differences should be approved with lead developers and added to the document.
+
+---
+
+#### Discuss and describe each new npm package
+If your code required some new npm package, you should:  
+
+1. Discuss the reasons and need for the package with lead developers.
+2. If the package is approved, add it to file "package.md": date, your name and purpose of this package.
+
+This information allows us to understand all project dependencies.  
+Next developers can understand tools which are already in the project, and not to add new one.  
+If some package will require update or replacement, information will help to find a better solution.  
+
+---
 
 Copyright © 2017 Stanislav Kochenkov 
 
