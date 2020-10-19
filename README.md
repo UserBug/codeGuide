@@ -1,6 +1,6 @@
 # Code Guide for Web Development in JS stack
 
-* [Naming convention](https://github.com/UserBug/codeGuide/docs/namingConvention.md)
+* [Naming convention](https://github.com/UserBug/codeGuide/blob/master/docs/namingConvention.md)
 
 ---
 
