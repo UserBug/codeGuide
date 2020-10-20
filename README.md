@@ -1,4 +1,5 @@
 # Code Guide for Web Development in JS stack
+v1.0.0
 
 * [Naming convention](https://github.com/UserBug/codeGuide/blob/master/docs/namingConvention.md)
 * [Files](https://github.com/UserBug/codeGuide/blob/master/docs/files.md)
@@ -7,6 +8,3 @@
 
 ---
 Copyright © 2017 Stanislav Kochenkov 
-
-
-
