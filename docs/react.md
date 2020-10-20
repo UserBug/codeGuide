@@ -32,6 +32,25 @@ For example: User credential, current localization, chat data, company data…
 
 [redux.js - Using local component state is fine](https://redux.js.org/faq/organizing-state#do-i-have-to-put-all-my-state-into-redux-should-i-ever-use-reacts-setstate)
 
+---
+
+#### Save only plain serializable objects in Redux
+During operation, Redux can compare storage values or save previous copies of the data.  
+Storing reference data can lead to improper operation of reducers and memory leaks.  
+
+[redux.js.org - functions, promises, or other non-serializable](https://redux.js.org/faq/organizing-state#can-i-put-functions-promises-or-other-non-serializable-items-in-my-store-state)
+
+---
+
+#### Avoid “connect” of Redux
+When some component "connect()" to Redux it create new wrapper,  
+this is another component in the tree and another code to execute before rendering.  
+All "mapStateToProps" of all components in the application will be called for any action in the application. This often leads to unnecessary rendering.  
+Try to use "connect()" only for Compounds like "Page" which are controlled by router and only one of the routes will be displayed.  
+Next, pass the data through the flow of "Props".  
+
+---
+
 
 ---
 Copyright © 2017 Stanislav Kochenkov 
