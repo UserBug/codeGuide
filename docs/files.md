@@ -97,4 +97,30 @@ It is just one of many examples...
 [Facebook issue](https://github.com/facebook/create-react-app/issues/87)
 
 ---
+
+### Separate exports
+If the file contains many independent entities, export them independently.  
+This will allow the collector to make the TreeShacking and reduce the size of the final file.  
+
+##### ❌ BAD
+```javascript
+const myFunction = () => {};
+const mysomeConst = 3;
+const config = {};
+
+export default {
+    myFunction,
+    mysomeConst,
+    config,
+};
+```
+
+##### ✔ GOOD 
+```javascript
+export const myFunction = () => {};
+export const mysomeConst = 3;
+export const config = {};
+```
+
+---
 Copyright © 2017 Stanislav Kochenkov 
