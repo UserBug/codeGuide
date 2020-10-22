@@ -1,6 +1,6 @@
 ## Common JavaScript
 
-#### New variables should contain null
+### New variables should contain null
 All created, without any known values, new variables should contain null.  
 This rule helps to easily distinguish non-existent properties and variables from cleaned or already created but not have value.
 
@@ -30,7 +30,7 @@ console.log(obj.b) // undefined
 
 ---
 
-#### Use destructuring in functions arguments
+### Use destructuring in functions arguments
 If function accept more than one argument use destructuring.
 
 Benefits:
@@ -69,7 +69,7 @@ const price = calculatePrice({
 
 ---
 
-#### Use arrow functions 
+### Use arrow functions 
 in all cases when you don't need context of this particular function.
 
 ##### ❌ BAD
@@ -88,7 +88,7 @@ const sum = ({ a, b }) => (a + b); // "sum" is named arrow function which has na
 
 ---
 
-#### Prefer single return
+### Prefer single return
 It will be a single place you have to look to trace backwards and figure out what a function returns.  
 Easier to debug and easier to modify.  
 
@@ -121,7 +121,7 @@ const sayMyName = (who) => {
 
 ---
 
-#### Use public class fields syntax 
+### Use public class fields syntax 
 Use the constructor only when necessary,  
 otherwise define public properties and methods in the class body.
 
@@ -158,7 +158,7 @@ class Basket {
 
 ---
 
-#### Prefer Promise 
+### Prefer Promise 
 Prefer Promise and Async functions instead of Callbacks.  
 Async functions as a very powerful tool of JavaScript.   
 Each Promise creates a new Microtask which can be executed in the Microtask queue of the Event Loop.   
@@ -169,7 +169,7 @@ Callbacks in some cases can create synchronous chains that block the user interf
 
 ---
 
-#### Prefer promise.catch()
+### Prefer promise.catch()
 ✎✎✎ to be discussed  
 try/catch will be executed synchronously.  
 If try{} receives an error, catch{} will execute immediately.  
@@ -212,7 +212,7 @@ const myAsyncFunction = (id) => (
 
 ---
 
-#### No errors/warnings/logs in console
+### No errors/warnings/logs in console
 Developer console is a very powerful and helpful tool.  
 It gives information to the developer about the health of the application.  
 Any message in there requires attention, and usually some action.  
@@ -223,7 +223,7 @@ but all this logs should be removed before code review and merge.
 
 ---
 
-#### JSDoc for static typing
+### JSDoc for static typing
 **JSDoc** - is a markup language used to annotate JavaScript source code files.  
 **TypeScript** - is a programming language.  
 
@@ -239,7 +239,7 @@ Benefits of JSDoc:
 
 ---
 
-#### Should I use TypeScript?
+### Should I use TypeScript?
 
 ##### ✔ Objective advantages of TypeScript that are not part of the "HolyWar":
 
@@ -256,7 +256,7 @@ Benefits of JSDoc:
 
 ---
 
-#### Forbidden to use any languages other than English in the code.
+### Forbidden to use any languages other than English in the code.
 To display the text in a local language, use the function translator.
 
 Benefits:
@@ -290,7 +290,7 @@ const renderAlert = () => (
 
 ---
 
-#### Remove unnecessary code
+### Remove unnecessary code
 All console logs should be deleted from files before the feature branch can be merged to the develop.  
 These unnecessary logs make it difficult for other developers to debug the code and can show private data.  
 
@@ -299,7 +299,7 @@ Blocks of code in the commentaries make it very difficult to read it and unneces
 
 ---
 
-#### Use underscore for private methods and properties.
+### Use underscore for private methods and properties.
 One of good ways to make code more clear is to add underscore for private methods.  
 It helps developers to understand which methods and properties can be used outside the object.  
 
@@ -341,7 +341,7 @@ class MyBasket {
 
 ---
 
-#### Respect all eslint rules
+### Respect all eslint rules
 Eslint is a very important tool in the development. It can be distracting in the beginning, but it allow: 
 
 * Check correct syntax.
@@ -355,7 +355,7 @@ all clarifications and differences should be approved with lead developers and a
 
 ---
 
-#### Discuss and describe each new npm package
+### Discuss and describe each new npm package
 If your code required some new npm package, you should:  
 
 1. Discuss the reasons and need for the package with lead developers.

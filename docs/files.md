@@ -1,5 +1,20 @@
 ## Files
 
+### Support only case sensitive path.
+According to the naming convention, register is an extremely important part of the name.  
+For example, "User" is a class, and "user" is an instance of the class "User."  
+
+```javascript
+// Two absolutely correct imports that can exist in one file.
+import Documents from './components/Documents';
+import documents from './components/documents';
+```
+
+The lack of sensitivity to the register leads to uncertainty of imports  
+and the inability to correctly support the launch of projects on Unix.
+
+---
+
 ### Separate entities by files
 If your logic requires more than 400 lines of code, it's time to think about splitting it into a couple of files.
 For example: move all constants to file "constants.js", move large functions to separate files, move validations.

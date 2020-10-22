@@ -1,6 +1,6 @@
 ## React
 
-#### All Components must have PropTypes
+### All Components must have PropTypes
 This basic rule helps to identify and avoid many errors.  
 PropTypes provide dynamic typing at the development stage.  
 What neither TypeScript nor JSDoc can`t provide.  
@@ -15,7 +15,7 @@ SomeComponent.propTypes = {
 
 ---
 
-#### Use Redux only for common data
+### Use Redux only for common data
 Redux is a useful tool, but it has disadvantages.  
 Each called action causes a complete copy of the entire storage.  
 In an App with only one reducer, this behavior slows the rendering of components insignificantly.  
@@ -34,7 +34,7 @@ For example: User credential, current localization, chat data, company data…
 
 ---
 
-#### Save only plain serializable objects in Redux
+### Save only plain serializable objects in Redux
 During operation, Redux can compare storage values or save previous copies of the data.  
 Storing reference data can lead to improper operation of reducers and memory leaks.  
 
@@ -42,7 +42,7 @@ Storing reference data can lead to improper operation of reducers and memory lea
 
 ---
 
-#### Avoid “connect” of Redux
+### Avoid “connect” of Redux
 When some component "connect()" to Redux it create new wrapper,  
 this is another component in the tree and another code to execute before rendering.  
 All "mapStateToProps" of all components in the application will be called for any action in the application. This often leads to unnecessary rendering.  
@@ -51,7 +51,7 @@ Next, pass the data through the flow of "Props".
 
 ---
 
-#### Contract value/onChange
+### Contract value/onChange
 Interfaces should be standardized, use properties “onChange” and “value” for the controlled components.  
 Using standard names for the properties of the controlled components helps to better understand their purpose,  
 eliminates duplicates and zoo of property names.  
@@ -96,7 +96,7 @@ ProductEditor.propTypes = {
 
 ---
 
-#### Always memorize components
+### Always memorize components
 To prevent unnecessary rerender of component and increases performance,  
 each component should be memorized.  
 Use recommended ways:
@@ -109,7 +109,7 @@ Use recommended ways:
 
 ---
 
-#### Don't use context
+### Don't use context
 One of the most important reason:  
 Parents did not know about context that need for children.  
 This can lead to a lack of updates in children.  
@@ -135,7 +135,7 @@ Official React documentation say:
 
 ---
 
-#### Functional Components and new functions
+### Functional Components and new functions
 In body of Functional Component each variable will be created again during render.  
 It can lead to child re renders because they will receipt new function each time.  
 To improve performance, we should not create renderProps inside functional components  
