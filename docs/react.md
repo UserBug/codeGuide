@@ -51,6 +51,136 @@ Next, pass the data through the flow of "Props".
 
 ---
 
+#### Contract value/onChange
+Interfaces should be standardized, use properties “onChange” and “value” for the controlled components.  
+Using standard names for the properties of the controlled components helps to better understand their purpose,  
+eliminates duplicates and zoo of property names.  
+For components working with complex entities, 
+it is better to specify the form of this entity and return it all in the method “onChange”.  
+
+* Data schema of the “value” must be the same as the data schema returned from “onChange” handler.
+* You should put to “value” only data which is the result of User actions or can be changed by the User.
+
+##### ❌ BAD
+```javascript
+DatePicker.propTypes = {
+    onDateChange: PropTypes.func,
+    date: PropTypes.string,
+}
+
+ProductEditor.propTypes = {
+    itemType: PropTypes.string.isRequired,
+    onPriceChange: PropTypes.func,
+    onNameChange: PropTypes.func,
+    price: PropTypes.number,
+    name: PropTypes.string.isRequired,
+}
+```
+
+##### ✔ GOOD 
+```javascript
+DatePicker.propTypes = {
+    onChange: PropTypes.func,
+    value: PropTypes.string,
+}
+
+ProductEditor.propTypes = {
+    itemType: PropTypes.string.isRequired, // User cant change itemType
+    onChange: PropTypes.func,
+    value: PropTypes.shape({
+        price: PropTypes.number.isRequired, // User can change price
+        name: PropTypes.string.isRequired, // User can change name
+    }).isRequired,
+}
+```
+
+---
+
+#### Always memorize components
+To prevent unnecessary rerender of component and increases performance,  
+each component should be memorized.  
+Use recommended ways:
+
+* shouldComponentUpdate
+* extends React.PureComponent (Be careful, PureComponent correctly checks only immutable properties, objects are checked by reference.)
+* React.memo
+
+[reactjs.org - shouldComponentUpdate In Action](https://reactjs.org/docs/optimizing-performance.html#shouldcomponentupdate-in-action)
+
+---
+
+#### Don't use context
+One of the most important reason:  
+Parents did not know about context that need for children.  
+This can lead to a lack of updates in children.  
+Main idea of React is Components, they are "lazy" and react only on Props change.  
+(PS: That's why library called "React")  
+
+If you want change something in child Component you should set new Props to it.
+
+* All Props are as clear and visible as possible.  
+But the context remains hidden and unseen.  
+This leads to a misunderstanding of code and data source on the page,  
+which greatly increases the number of bugs and the time to resolve them.
+* Props have strict typing and involved in the life cycle of the component.
+* Passing data thru props give possibility to use clear ways of memorization.
+
+Context does not have these advantages.
+
+Official React documentation say:  
+"If you only want to avoid passing some props through many levels, component composition is often a simpler solution than context."  
+[reactjs.org - Before You Use Context](https://reactjs.org/docs/context.html#before-you-use-context)
+
+> After the release of React 16.3, the context became much safer. Despite this, the context should be used only in special exceptional cases.
+
+---
+
+#### Functional Components and new functions
+In body of Functional Component each variable will be created again during render.  
+It can lead to child re renders because they will receipt new function each time.  
+To improve performance, we should not create renderProps inside functional components  
+and avoid re-creation of hendlers.
+
+##### ❌ BAD
+```javascript
+const MyComponent = (props) => {
+  const onClick = (e) => (
+    console.log(e)
+  );
+  const renderContent = () => (
+    <span>{props.text}</span>
+  );
+  return (
+    <Header
+      onClick={onClick}
+      renderContent={renderContent}
+    />
+  );
+};
+```
+
+##### ✔ GOOD 
+```javascript
+const onClick = (e) => (
+  console.log(e)
+);
+
+const MyComponent = (props) => {
+  const renderContent = useCallback((
+    () => (
+      <span>{props.text}</span>
+    )
+  ), [props.text]);
+  return (
+    <Header
+      onClick={onClick}
+      renderContent={renderContent}
+    />
+  );
+};
+```
+
+[reactjs.org - useCallback](https://ru.reactjs.org/docs/hooks-reference.html#usecallback)
 
 ---
 Copyright © 2017 Stanislav Kochenkov 
