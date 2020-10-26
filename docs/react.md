@@ -15,6 +15,60 @@ SomeComponent.propTypes = {
 
 ---
 
+### Dont use destructuring for props
+Referring to the ```props``` object helps to easily distinguish the data that came to the component  
+from the variables and functions created inside.  
+
+##### ❌ BAD
+```javascript
+const myButton = ({ type, size, text, changeType }) => {
+  const [ stateCount, setStateCount ] = useState(0);
+  const afterText = stateCount ? String(stateCount) : 'No count';
+  const handleClick = useFunction(() => {
+    setStateCount((count) => {
+      if(count === 3) {
+        changeType('3');
+      }
+      return count++;
+    });
+  }, [changeType]);
+
+  return (
+    <button
+      type={type}
+      size={size}
+      onClick={handleClick}
+    >{text} {afterText}</button>
+  );
+};
+```
+
+##### ✔ GOOD 
+```javascript
+const myButton = (props) => {
+  const [ stateCount, setStateCount ] = useState(0);
+  const afterText = stateCount ? String(stateCount) : 'No count';
+  const handleClick = useFunction(() => {
+    setStateCount((count) => {
+      if(count === 3) {
+        props.changeType('3');
+      }
+      return count++;
+    });
+  }, [props.changeType]);
+
+  return (
+    <button
+      type={props.type}
+      size={props.size}
+      onClick={handleClick}
+    >{props.text} {afterText}</button>
+  );
+};
+```
+
+---
+
 ### Use Redux only for common data
 Redux is a useful tool, but it has disadvantages.  
 Each called action causes a complete copy of the entire storage.  

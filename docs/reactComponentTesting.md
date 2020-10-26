@@ -117,6 +117,7 @@ However, it is best to minimize their use to find the element.
 
 [kentcdodds - data-testid query](https://kentcdodds.com/blog/making-your-ui-tests-resilient-to-change#whats-with-the-data-testid-query)  
 
+##### ❌ BAD
 ```javascript
 test('Display children on Load', () => {
     const myComponent = mount(<MyComponent />);
