@@ -100,19 +100,27 @@ const MyForm = (props) => {
 This list of hooks is recommended for creation and use,  
 as it has proven to be convenient and effective:
 
-> ##### ReactMemo(Component, shouldComponentUpdate)
-> Will memorize any Component by using function shouldComponentUpdate(prevProps, nextProps).  
-> shouldComponentUpdate should be stateless function.
+```javascript
+ReactMemo(Component, shouldComponentUpdate);
+```  
+Will memorize any Component by using function ```shouldComponentUpdate(prevProps, nextProps)```.  
+shouldComponentUpdate must be stateless function.
 
-> ##### useComponentDidMount(fn)
-> Will execute argument function only once, when Component did mount.
+```javascript
+useComponentDidMount(fn);
+```
+Will execute argument function only once, when Component did mount.
 
-> ##### useComponentWillUnmount(fn)
-> Will execute argument function only once, when Component will unmount.
+```javascript
+useComponentWillUnmount(fn);
+```
+Will execute argument function only once, when Component will unmount.
 
-> ##### useCallbackOnce(fn)
-> Similar to useCallback.  
-> Will return same function each time, to meter how often component renders.
+```javascript
+useCallbackOnce(fn);
+```
+Similar to useCallback.  
+Will return same function each time, no meter how often component renders.
 
 ---
 Copyright © 2017 Stanislav Kochenkov 
