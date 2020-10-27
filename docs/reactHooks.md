@@ -96,6 +96,15 @@ const MyForm = (props) => {
 
 ---
 
+### Split Hooks if they reach limit
+Signs that the hook should be divided into several parts:
+
+* Has more than 3 arguments
+* Imports more than 4 files
+* Contains over 400 lines of code
+
+---
+
 ### Useful custom hooks
 This list of hooks is recommended for creation and use,  
 as it has proven to be convenient and effective:
