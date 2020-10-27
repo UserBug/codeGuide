@@ -23,7 +23,7 @@ Examples of branch names: ```OOPP-76-some-feature```, ```EX-2391-some-feature```
 
 ---
 
-### Any git commit message should start with JIRA ticket id.
+### Any git commit message should start with ticket id
 If there is a ticket id in the comment name, it will be displayed on the page of ticket in issue tracking system.  
 Most modern editors allow you to do this automatically, or you can add git pre commit hook:  
 [Automatically Prepend a Jira Issue ID to Git Commit](https://gist.github.com/robatron/01b9a1061e1e8b35d270)  
