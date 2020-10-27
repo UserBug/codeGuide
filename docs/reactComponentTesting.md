@@ -136,4 +136,17 @@ test('Display children on Load', () => {
 ```
 
 ---
+
+### Root element of each component should have "data-testid"
+"component-***"  
+This practice will allow you not only to make functional testing more convenient,  
+but also to easily distinguish component blocks in html.  
+
+```javascript
+const myBlock = () => (
+  <div data-testid="component-myBlock">Block</div>
+);
+```
+
+---
 Copyright © 2017 Stanislav Kochenkov 
