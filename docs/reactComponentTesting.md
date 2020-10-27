@@ -12,7 +12,7 @@ Created by Airbnb.
 http://airbnb.io/enzyme/
 
 ##### End to End (Functional) testing of React Components
-Cypress - Framework for End to End testing of React Applications.
+Cypress - Framework for End to End testing of React Applications.  
 https://www.cypress.io/
 
 ---
