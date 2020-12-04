@@ -1,5 +1,8 @@
 ## Common JavaScript
 
+It is recommended to use as a common rules:  
+[Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+
 ### New variables should contain null
 All created, without any known values, new variables should contain null.  
 This rule helps to easily distinguish non-existent properties and variables from cleaned or already created but not have value.
@@ -169,49 +172,6 @@ Callbacks in some cases can create synchronous chains that block the user interf
 
 ---
 
-### Prefer promise.catch()
-✎✎✎ to be discussed  
-try/catch will be executed synchronously.  
-If try{} receives an error, catch{} will execute immediately.  
-In contrast to this, promise.catch() will add new Microtask in Event Loop queue.  
-
-##### ❌ BAD
-```javascript
-const myAsyncFunction = async (id) => {
-  let result = null;
-  try {
-    const partA = await getPartA(id);
-    const partB = await getPartB(id);
-    result = { partA, partB };
-  } catch (err) { // The Catch block will be processed immediately, and not as a microtask
-    logError(error);
-  }
-
-  // Obviously this is the finally part
-  await logResult({ id, result });
-  return result;
-};
-```
-
-##### ✔ GOOD 
-```javascript
-const myAsyncFunction = (id) => (
-  Promise.resolve()
-    .then(async () => {
-      const partA = await getPartA(id);
-      const partB = await getPartB(id);
-      return { partA, partB };
-    }).catch(() => {
-      logError(error);
-      return null;
-    }).then(async (result) => {
-      await logResult({ id, result });
-    })
-);
-```
-
----
-
 ### No errors/warnings/logs in console
 Developer console is a very powerful and helpful tool.  
 It gives information to the developer about the health of the application.  
@@ -296,48 +256,6 @@ These unnecessary logs make it difficult for other developers to debug the code 
 
 Delete commented out parts of the code.  
 Blocks of code in the commentaries make it very difficult to read it and unnecessarily increase the size of the files.  
-
----
-
-### Use underscore for private methods and properties.
-One of good ways to make code more clear is to add underscore for private methods.  
-It helps developers to understand which methods and properties can be used outside the object.  
-
-##### ❌ BAD
-```javascript
-class MyBasket {
-    count = 0;
-    stock = [];
-    addToStock = (item) => {
-        this.stock.push(item);
-    }
-    increaseCount = () => {
-        this.count ++;
-    }
-    add = (item) => {
-        this.addToStock(item);
-        this.increaseCount();
-    }
-}
-```
-
-##### ✔ GOOD 
-```javascript
-class MyBasket {
-    _count = 0;
-    _stock = [];
-    _addToStock = (item) => {
-        this._stock.push(item);
-    }
-    _increaseCount = () => {
-        this._count ++;
-    }
-    add = (item) => {
-        this._addToStock(item);
-        this._increaseCount();
-    }
-}
-```
 
 ---
 
