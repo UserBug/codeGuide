@@ -1,4 +1,8 @@
 # Code Guide for Web Development in JS stack
+This guide contains a set of guidelines for developers.  
+The purpose of which is to identify common patterns of bad coding  
+and suggest a better approach.
+
 v1.0.0
 
 * [Git](https://github.com/UserBug/codeGuide/blob/v1.0.0/docs/git.md)
