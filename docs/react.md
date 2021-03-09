@@ -193,7 +193,9 @@ Official React documentation say:
 In body of Functional Component each variable will be created again during render.  
 It can lead to child re renders because they will receipt new function each time.  
 To improve performance, we should not create renderProps inside functional components  
-and avoid re-creation of hendlers.
+and avoid re-creation of handlers.
+
+[reactjs.org - useCallback](https://ru.reactjs.org/docs/hooks-reference.html#usecallback)
 
 ##### ❌ BAD
 ```javascript
@@ -234,7 +236,69 @@ const MyComponent = (props) => {
 };
 ```
 
-[reactjs.org - useCallback](https://ru.reactjs.org/docs/hooks-reference.html#usecallback)
+---
+
+### Async event handlers
+Event-driven the approach implies the presence of an event  
+and queue asynchronous event processing using handlers.  
+Each event can create new ones,  
+but the queue does not wait for a specific response from the handler.  
+This means that the return value from the handler must always be void.
+
+At the same time, it is considered a good approach to handle exceptions for each promise.  
+The asynchronous handler will return a promise that no one is willing to handle or catch errors.
+Therefore, the handler must remain a synchronous function ``` () => void ```.  
+Any asynchronous code must be able to catch errors inside the handler.  
+
+[MDN Web Docs - handleEvent](https://developer.mozilla.org/en-US/docs/Web/API/EventListener/handleEvent)  
+[Wikipedia - Event driven_programming](https://en.wikipedia.org/wiki/Event-driven_programming)  
+[Wikipedia - Event driven_architecture](https://en.wikipedia.org/wiki/Event-driven_architecture)  
+
+```javascript
+const MyComponent = (props) => {
+  const onClick = useCallback((
+    async () => {
+      await logClick(props.id);
+      await sendMessageToServer(props.id);
+    }
+  ), [props.id]);
+  return (
+    <button onClick={onClick} />
+  );
+};
+```
+
+##### ✔ GOOD
+```javascript
+const MyComponent1 = (props) => {
+  const onClick = useCallback((
+    () => {
+      logClick(props.id)
+        .then(() => (
+          sendMessageToServer(props.id)
+        ))
+        .catch(catchAnyError);
+    }
+  ), [props.id]);
+  return (
+    <button onClick={onClick} />
+  );
+};
+
+const MyComponent2 = (props) => {
+  const onClick = useCallback((
+    () => {
+      (async () => {
+        await logClick(props.id);
+        await sendMessageToServer(props.id);
+      })().catch(catchAnyError)
+    }
+  ), [props.id]);
+  return (
+    <button onClick={onClick} />
+  );
+};
+```
 
 ---
 Copyright © 2017 Stanislav Kochenkov 
