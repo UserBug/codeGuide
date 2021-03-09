@@ -254,6 +254,7 @@ Any asynchronous code must be able to catch errors inside the handler.
 [Wikipedia - Event driven_programming](https://en.wikipedia.org/wiki/Event-driven_programming)  
 [Wikipedia - Event driven_architecture](https://en.wikipedia.org/wiki/Event-driven_architecture)  
 
+##### ❌ BAD
 ```javascript
 const MyComponent = (props) => {
   const onClick = useCallback((
