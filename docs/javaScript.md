@@ -7,6 +7,8 @@ It is recommended to use as a common rules:
 All created, without any known values, new variables should contain null.  
 This rule helps to easily distinguish non-existent properties and variables from cleaned or already created but not have value.
 
+Object.prototype.hasOwnProperty() cannot be conveniently applied to large objects.
+
 ##### ❌ BAD
 ```javascript
 let a;
