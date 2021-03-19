@@ -11,7 +11,8 @@ SomeComponent.propTypes = {
 };
 ```
 
-[reactjs.org - Typechecking With PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html)
+[reactjs.org - Typechecking With PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html)  
+[eslint - react/prop-types](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md)
 
 ---
 
