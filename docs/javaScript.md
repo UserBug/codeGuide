@@ -335,9 +335,9 @@ domElement.addEventListener('click', onClick);
 
 ##### ❌ BAD
 ```javascript
-const onClick =  async () => {
-  await logClick(props.id);
-  await sendMessageToServer(props.id);
+const onClick =  async (event) => {
+  await logClick(event.someDataFromEvent);
+  await sendMessageToServer(event.someDataFromEvent);
 };
 
 domElement.addEventListener('click', onClick);
@@ -380,10 +380,10 @@ const MyComponent2 = (props) => {
 
 ##### ✔ GOOD
 ```javascript
-const onClick =  () => {
+const onClick =  (event) => {
   (async () => {
-    await logClick(props.id);
-    await sendMessageToServer(props.id);
+    await logClick(event.someDataFromEvent);
+    await sendMessageToServer(event.someDataFromEvent);
   })().catch(catchAnyError)
 };
 
