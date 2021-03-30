@@ -290,7 +290,105 @@ If your code required some new npm package, you should:
 
 This information allows us to understand all project dependencies.  
 Next developers can understand tools which are already in the project, and not to add new one.  
-If some package will require update or replacement, information will help to find a better solution.  
+If some package will require update or replacement, information will help to find a better solution.
+
+---
+
+### Event handler should not return a promise
+Event-driven the approach implies the presence of an event  
+and queue asynchronous event processing using handlers.  
+Each event can create new ones,  
+but the queue does not wait for a specific response from the handler.  
+This means that the return value from the handler must always be void.
+
+At the same time, it is considered a good approach to handle exceptions for each promise.  
+The asynchronous handler will return a promise that no one is willing to handle or catch errors.
+Therefore, the handler must remain a synchronous function ``` () => void ```.  
+Any asynchronous code must be able to catch errors inside the handler.
+
+[MDN Web Docs - handleEvent](https://developer.mozilla.org/en-US/docs/Web/API/EventListener/handleEvent)  
+[MDN Web Docs - EventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventListener)  
+[Wikipedia - Event driven_programming](https://en.wikipedia.org/wiki/Event-driven_programming)  
+[Wikipedia - Event driven_architecture](https://en.wikipedia.org/wiki/Event-driven_architecture)
+
+##### ❌ BAD
+```javascript
+const MyComponent = (props) => {
+  const onClick = useCallback((
+    async () => {
+      await logClick(props.id);
+      await sendMessageToServer(props.id);
+    }
+  ), [props.id]);
+  return (
+    <button onClick={onClick} />
+  );
+};
+
+const onClick =  async () => {
+  await logClick(props.id);
+  await sendMessageToServer(props.id);
+};
+
+domElement.addEventListener('click', onClick);
+```
+
+##### ❌ BAD
+```javascript
+const onClick =  async () => {
+  await logClick(props.id);
+  await sendMessageToServer(props.id);
+};
+
+domElement.addEventListener('click', onClick);
+```
+
+##### ✔ GOOD
+```javascript
+const MyComponent1 = (props) => {
+  const onClick = useCallback((
+    () => {
+      logClick(props.id)
+        .then(() => (
+          sendMessageToServer(props.id)
+        ))
+        .catch(catchAnyError);
+    }
+  ), [props.id]);
+  return (
+    <button onClick={onClick} />
+  );
+};
+```
+
+##### ✔ GOOD
+```javascript
+const MyComponent2 = (props) => {
+  const onClick = useCallback((
+    () => {
+      (async () => {
+        await logClick(props.id);
+        await sendMessageToServer(props.id);
+      })().catch(catchAnyError)
+    }
+  ), [props.id]);
+  return (
+    <button onClick={onClick} />
+  );
+};
+```
+
+##### ✔ GOOD
+```javascript
+const onClick =  () => {
+  (async () => {
+    await logClick(props.id);
+    await sendMessageToServer(props.id);
+  })().catch(catchAnyError)
+};
+
+domElement.addEventListener('click', onClick);
+```
 
 ---
 Copyright © 2017 Stanislav Kochenkov 
