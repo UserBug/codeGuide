@@ -324,13 +324,6 @@ const MyComponent = (props) => {
     <button onClick={onClick} />
   );
 };
-
-const onClick =  async () => {
-  await logClick(props.id);
-  await sendMessageToServer(props.id);
-};
-
-domElement.addEventListener('click', onClick);
 ```
 
 ##### ❌ BAD
