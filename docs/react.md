@@ -20,6 +20,8 @@ SomeComponent.propTypes = {
 Referring to the ```props``` object helps to easily distinguish the data that came to the component  
 from the variables and functions created inside.  
 
+[eslint - react/destructuring-assignment - never](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md)
+
 ##### ❌ BAD
 ```javascript
 const myButton = ({ type, size, text, changeType }) => {
