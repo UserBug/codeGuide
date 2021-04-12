@@ -229,7 +229,7 @@ Official React documentation say:
 
 ---
 
-### Functional Components and new functions
+### useCallback in Functional Components
 In body of Functional Component each variable will be created again during render.  
 It can lead to child re renders because they will receipt new function each time.  
 To improve performance, we should not create renderProps inside functional components  
