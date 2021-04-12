@@ -5,6 +5,9 @@ This basic rule helps to identify and avoid many errors.
 PropTypes provide dynamic typing at the development stage.  
 What neither TypeScript nor JSDoc can`t provide.  
 
+When using TypeScript, the component interfaces must be compiled to PropTypes for development bundle.  
+[babel-plugin-typescript-to-proptypes](https://www.npmjs.com/package/babel-plugin-typescript-to-proptypes)
+
 ```javascript
 SomeComponent.propTypes = {
   name: PropTypes.string.isRequired
