@@ -259,7 +259,8 @@ Benefits of JSDoc:
 
 **JSDoc** allows you to add static typing of the code while staying with **JavaScript**.
 
-[Type Safe JavaScript and TypeScript with JSDoc](https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76)
+[eslint - require-jsdoc](https://eslint.org/docs/rules/require-jsdoc)  
+[Type Safe JavaScript and TypeScript with JSDoc](https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76)  
 
 ---
 
