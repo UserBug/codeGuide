@@ -186,8 +186,8 @@ Callbacks in some cases can create synchronous chains that block the user interf
 
 ##### ❌ BAD
 ```javascript
-const someAsyncFunction = (args, cb) => {
-  const businessLogicValue = args.a + args.b;
+const someAsyncFunction = ({ a, b }, cb) => {
+  const businessLogicValue = a + b;
   const onEnd = (result, error) => {
     if(error) {
       cb(null, error);
@@ -198,8 +198,8 @@ const someAsyncFunction = (args, cb) => {
   someCbGlobalIO(businessLogicValue, onEnd)
 };
 
-const someAsyncFunction = (args, cb) => {
-  const businessLogicValue = args.a + args.b;
+const someAsyncFunction = ({ a, b }, cb) => {
+  const businessLogicValue = a + b;
   someAsyncGlobalIO(businessLogicValue)
     .then((result) => {
       cb(businessLogicValue * result);
@@ -211,9 +211,9 @@ const someAsyncFunction = (args, cb) => {
 
 ##### ✔ GOOD
 ```javascript
-const someAsyncFunction = (args) => (
+const someAsyncFunction = ({ a, b }) => (
   new Promise((res, rej) => {
-    const businessLogicValue = args.a + args.b;
+    const businessLogicValue = a + b;
     const onEnd = (result, error) => {
       if(error) {
         rej(error);
@@ -225,8 +225,8 @@ const someAsyncFunction = (args) => (
   })
 );
 
-const someAsyncFunction = async (args) => {
-  const businessLogicValue = args.a + args.b;
+const someAsyncFunction = async ({ a, b }) => {
+  const businessLogicValue = a + b;
   const result = await someAsyncGlobalIO(businessLogicValue);
   return businessLogicValue * result;
 };
