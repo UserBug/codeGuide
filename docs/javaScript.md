@@ -145,6 +145,9 @@ otherwise define public properties and methods in the class body.
 * Reduce amount of code
 * Autobinding
 
+[React doc - Handling events](https://reactjs.org/docs/handling-events.html)   
+[React doc - Autobinding](https://reactjs.org/docs/react-without-es6.html#autobinding)
+
 ##### ❌ BAD
 ```javascript
 class Basket {
@@ -169,9 +172,6 @@ class Basket {
   };
 }
 ```
-
-[React doc - Handling events](https://reactjs.org/docs/handling-events.html)   
-[React doc - Autobinding](https://reactjs.org/docs/react-without-es6.html#autobinding)
 
 ---
 
@@ -234,7 +234,7 @@ const someAsyncFunction = async ({ a, b }) => {
 
 ---
 
-### No errors/warnings/logs in console
+### No errors, warnings, logs in console
 Developer console is a very powerful and helpful tool.  
 It gives information to the developer about the health of the application.  
 Any message in there requires attention, and usually some action.  
@@ -242,6 +242,8 @@ Errors and warnings are signals about existing bugs in the code.
 Any ticket cannot be closed if there exist those messages in the console.  
 Showing some debug data in the consol it is helpful,  
 but all this logs should be removed before code review and merge.  
+
+[eslint - no-console](https://eslint.org/docs/rules/no-console)
 
 ---
 
