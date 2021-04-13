@@ -25,8 +25,9 @@ const obj = {
 };
 
 console.log(a) // undefined
+console.log(b) // undefined
 console.log(obj.c) // undefined
-console.log(obj.b) // undefined
+console.log(obj.d) // undefined
 ```
 
 ##### ✔ GOOD 
@@ -37,8 +38,9 @@ const obj = {
 };
 
 console.log(a) // null
+console.log(b) // undefined
 console.log(obj.c) // null
-console.log(obj.b) // undefined
+console.log(obj.d) // undefined
 ```
 
 ---
