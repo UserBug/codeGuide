@@ -301,6 +301,10 @@ Benefits:
 const renderAlert = () => (
     'الصفحة المطلوبة غير متاحة'
 );
+
+const renderWarning = () => (
+  'The field did not pass validation'
+);
 ```
 
 ##### ✔ GOOD 
@@ -310,6 +314,10 @@ const renderAlert = () => (
 */
 const renderAlert = () => (
   translate('ERROR_PAGE_NOT_AVAILABLE')
+);
+
+const renderWarning = () => (
+  translate('FIELD_DID_NOT_PASS_VALIDATION')
 );
 ```
 
