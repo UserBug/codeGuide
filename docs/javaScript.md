@@ -184,6 +184,54 @@ Callbacks in some cases can create synchronous chains that block the user interf
 
 [MDN - Using microtasks in JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide)
 
+##### ❌ BAD
+```javascript
+const someAsyncFunction = (args, cb) => {
+  const businessLogicValue = args.a + args.b;
+  const onEnd = (result, error) => {
+    if(error) {
+      cb(null, error);
+    } else {
+      cb(businessLogicValue * result);
+    }
+  };
+  someCbGlobalIO(businessLogicValue, onEnd)
+};
+
+const someAsyncFunction = (args, cb) => {
+  const businessLogicValue = args.a + args.b;
+  someAsyncGlobalIO(businessLogicValue)
+    .then((result) => {
+      cb(businessLogicValue * result);
+    }).catch((error) => {
+      cb(null, error);
+    });
+};
+```
+
+##### ✔ GOOD
+```javascript
+const someAsyncFunction = (args) => (
+  new Promise((res, rej) => {
+    const businessLogicValue = args.a + args.b;
+    const onEnd = (result, error) => {
+      if(error) {
+        rej(error);
+      } else {
+        res(businessLogicValue * result);
+      }
+    };
+    someCbGlobalIO(businessLogicValue, onEnd)
+  })
+);
+
+const someAsyncFunction = async (args) => {
+  const businessLogicValue = args.a + args.b;
+  const result = await someAsyncGlobalIO(businessLogicValue);
+  return businessLogicValue * result;
+};
+```
+
 ---
 
 ### No errors/warnings/logs in console
