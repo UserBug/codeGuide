@@ -106,6 +106,8 @@ const sum = ({ a, b }) => (a + b); // "sum" is named arrow function which has na
 ### Prefer single return
 It will be a single place you have to look to trace backwards and figure out what a function returns.  
 Easier to debug and easier to modify.  
+Multiple returns create interrupts in function execution,  
+making it harder to find unused code.
 
 ##### ❌ BAD
 ```javascript
