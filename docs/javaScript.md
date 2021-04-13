@@ -14,6 +14,7 @@ In queries "undefined" and "null" have different meanings:
 - "undefined" - Value not set  
 - "null" - The value is set as void  
 
+[MDN Web Docs - null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null)  
 [eslint - init-declarations](https://eslint.org/docs/rules/init-declarations)
 
 ##### ❌ BAD
