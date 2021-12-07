@@ -24,18 +24,22 @@ const mySomeFunction = () => {};
 ---
 
 ### JS Classes
-All definitions of JS Classes should use CamelCase naming with uppercase first letter.
+All definitions of JS Classes should use PascalCase.
 ##### ❌ BAD
 ```javascript
 class myClass {};
 class MY_CLASS {};
 const myClass = () => { /* constructor as function*/ };
+const SOME_CALCULATED_DATA = calculateData();
 ```
 
 ##### ✔ GOOD
 ```javascript
 class MyClass {};
 const MyClass = () => { /* constructor as function*/ };
+const FREEZE_OBJECT = Object.freeze({ })
+const notFreezeObject = {};
+const someCalculatedData = calculateData();
 ```
 
 ---
