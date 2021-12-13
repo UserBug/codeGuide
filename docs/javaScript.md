@@ -123,6 +123,7 @@ function sum ({ a, b }) {
 const sum = ({ a, b }) => (a + b); // "sum" is named arrow function which has name in stacktrace
 ```
 
+[Google - JS Styleguide - Features functions arrow functions](https://google.github.io/styleguide/jsguide.html#features-functions-arrow-functions)
 [When should I use Arrow functions in ECMAScript 6?](https://stackoverflow.com/questions/22939130/when-should-i-use-arrow-functions-in-ecmascript-6)
 
 ---
@@ -283,6 +284,7 @@ Benefits of JSDoc:
 
 **JSDoc** allows you to add static typing of the code while staying with **JavaScript**.
 
+[Google - JS Styleguide - JSDoc](https://google.github.io/styleguide/jsguide.html#jsdoc)
 [eslint - require-jsdoc](https://eslint.org/docs/rules/require-jsdoc)  
 [Type Safe JavaScript and TypeScript with JSDoc](https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76)  
 

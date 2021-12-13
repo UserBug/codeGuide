@@ -1,5 +1,51 @@
 ## Naming convention
 
+### Names says whats inside
+Name of:
+* Variable
+* Constant
+* Function
+* Argument
+* Class
+* CssClass
+
+Give as descriptive a name as possible, within reason.  
+Do not worry about saving horizontal space  
+as it is far more important to make your code immediately understandable by a new reader.  
+Do not use abbreviations that are ambiguous or unfamiliar to readers outside your project,  
+and do not abbreviate by deleting letters within a word.
+
+##### ❌ BAD
+```javascript
+let a = 2;
+const str = 'Mark';
+const fn = (e) => {};
+const cb = (e) => {};
+const obj = {};
+const BBCC = [];
+```
+```css
+.l {}
+```
+
+##### ✔ GOOD
+```javascript
+let maxAllowedAnswersInForm = 1;
+const userShortNameInTitle = 'Mark';
+const submitButtonOnClick = (event) => {};
+const sendFormDataOnError = (error) => {};
+const userDataObject = {};
+const userIdsArray = [];
+```
+```css
+.defaultLinkViewForArticles {}
+```
+
+[Google - JS Styleguide - Naming rules common to all identifiers](https://google.github.io/styleguide/jsguide.html#naming-rules-common-to-all-identifiers)  
+[Airbnb - JS Styleguide - Naming descriptive](https://github.com/airbnb/javascript#naming--descriptive)  
+
+---
+
 ### Variables, functions, CSS classes
 should use CamelCase naming with lowercase first letter.
 ##### ❌ BAD
@@ -20,6 +66,9 @@ const mySomeFunction = () => {};
 ```css
 .someCssClass {}
 ```
+
+[Google - JS Styleguide - Naming local variable names](https://google.github.io/styleguide/jsguide.html#naming-local-variable-names)  
+[Mozilla - JS Styleguide - Variable naming](https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Code_guidelines/JavaScript#variable_naming)  
 
 ---
 
@@ -42,6 +91,9 @@ const notFreezeObject = {};
 const someCalculatedData = calculateData();
 ```
 
+[Google - JS Styleguide - Naming local variable names](https://google.github.io/styleguide/jsguide.html#naming-local-variable-names)  
+[Airbnb - JS Styleguide - PascalCase](https://github.com/airbnb/javascript#naming--PascalCase)
+
 ---
 
 ### Constants
@@ -59,6 +111,9 @@ const MY_SOME_CONST = () => {};
 const MY_SOME_CONST = 3;
 const mySomeConst = () => {};
 ```
+
+[Google - JS Styleguide - Naming constant names](https://google.github.io/styleguide/jsguide.html#naming-constant-names)  
+[Airbnb - JS Styleguide - Naming uppercase](https://github.com/airbnb/javascript#naming--uppercase)  
 
 ---
 
