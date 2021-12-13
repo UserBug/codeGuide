@@ -1,6 +1,6 @@
 ## Naming convention
 
-### Names says whats inside
+### Use descriptive names
 Name of:
 * Variable
 * Constant
