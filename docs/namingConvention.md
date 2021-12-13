@@ -117,6 +117,29 @@ const mySomeConst = () => {};
 
 ---
 
+### Verb in Function name
+Name of all methods and functions must contain a Verb.  
+Since any function performs an action, it must explicitly reflect this in the name.  
+This will allow you to easily distinguish it in the code and improve your understanding of its purpose.  
+
+##### ❌ BAD
+```javascript
+const click = () => {};
+const user = () => {};
+const validForm = () => {};
+```
+
+##### ✔ GOOD
+```javascript
+const onClick = () => {};
+const saveUser = () => {};
+const isFormValid = () => {};
+```
+
+[Google - JS Styleguide - Naming method names](https://google.github.io/styleguide/jsguide.html#naming-method-names)  
+
+---
+
 ### URL
 All URL paths should use the kebab case in lowercase.
 
