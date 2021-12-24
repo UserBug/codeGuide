@@ -173,15 +173,25 @@ For encapsulating absolute values only.
 * Variables should NOT be used directly in component styles  
 
 __Name pattern__: `Adjective` `What it is ?`   
-MAIN_FONT, XL_INDENT, BOLD_FONT, RED_COLOR
+```
+MAIN_FONT
+XL_INDENT
+BOLD_FONT
+RED_COLOR
+```
 
 #### Level 2 - Purpose
 It is intended to describe the purpose.
 * Get values only from "Level 1 - Values"  
 * Variables can be used directly in component styles
 
-__Name pattern__: `Where will be used?` `Adjective` `What it is ?`   
-ROW_MAIN_FONT, BLOCK_HORIZONTAL_INDENT, LINK_BOLD_FONT, ERROR_TEXT_COLOR
+__Name pattern__: `Where will be used?` `Adjective` `What it is ?`  
+```
+ROW_MAIN_FONT
+BLOCK_HORIZONTAL_INDENT
+LINK_BOLD_FONT
+ERROR_TEXT_COLOR
+```
 
 #### Level 3 - Component
 Describes UI component styles.
@@ -189,7 +199,12 @@ Describes UI component styles.
 * Variables can be used directly in component styles
 
 __Name pattern__: `Component` `Where will be used?` `Adjective` `What it is ?`   
-MENU_ROW_MAIN_FONT, ARTICLE_BLOCK_HORIZONTAL_INDENT, LINK_BOLD_FONT, ERROR_POPUP_TEXT_COLOR
+```
+MENU_ROW_MAIN_FONT
+ARTICLE_BLOCK_HORIZONTAL_INDENT
+LINK_BOLD_FONT
+ERROR_POPUP_TEXT_COLOR
+```
 
 
 ##### ❌ BAD
