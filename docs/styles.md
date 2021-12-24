@@ -156,76 +156,116 @@ $PRIMARY_VERY_LIGHT_COLOR: var(--PRIMARY_VERY_LIGHT_COLOR);
 ---
 
 ### Variables from Generic to Specific
-Using 2 levels of abstraction for style variables allows you to:
-
+Using 3 levels of abstraction for style variables allows you to:
 * Remove the number of duplicate styles
 * Standardize the design system
 * Clearly describe the purpose of each variable
+* Easy to find collected in one place
+* It becomes possible to see all values at once
+* Easier to understand the system in styles
+* Easy to change values for design author
+* It's hard for a developer to hide their nonstandard styles.
+* Inconsistencies or a wide variety of meanings are immediately visible.
+
+#### Level 1 - Values
+For encapsulating absolute values only.
+* Stores only values
+* Variables should NOT be used directly in component styles  
+
+__Name pattern__: `Adjective` `What it is ?`   
+MAIN_FONT, XL_INDENT, BOLD_FONT, RED_COLOR
+
+#### Level 2 - Purpose
+It is intended to describe the purpose.
+* Get values only from "Level 1 - Values"  
+* Variables can be used directly in component styles
+
+__Name pattern__: `Where will be used?` `Adjective` `What it is ?`   
+ROW_MAIN_FONT, BLOCK_HORIZONTAL_INDENT, LINK_BOLD_FONT, ERROR_TEXT_COLOR
+
+#### Level 3 - Component
+Describes UI component styles.
+* Get values only from "Level 2 - Purpose"
+* Variables can be used directly in component styles
+
+__Name pattern__: `Component` `Where will be used?` `Adjective` `What it is ?`   
+MENU_ROW_MAIN_FONT, ARTICLE_BLOCK_HORIZONTAL_INDENT, LINK_BOLD_FONT, ERROR_POPUP_TEXT_COLOR
+
 
 ##### ❌ BAD
-```scss
-$RED: #c15454;
-$YELLOW: #aeae00;
-$TOP_BLOCK_HEIGHT: 20px;
-$LINE_WIDTH: 12px;
-
-.header {
-  color: $RED;
-  background: $YELLOW;
-  border: $RED;
-  height: $TOP_BLOCK_HEIGHT;
-  width: $LINE_WIDTH;
-
-  .row {
-    width: $LINE_WIDTH;
-  }
-}
-```
-
-##### ✔ GOOD 
-```scss
-// theme/colors.scss
+```css
 :root {
-  --RED: #c15454;
-  --YELLOW:  #aeae00;
-
-  --ERROR_COLOR: var(--RED);
-  --ERROR_BORDER_COLOR: var(--RED);
-  --ERROR_BACKGROUND_COLOR: var(--YELLOW);
+    --RED: #c15454;
+    --YELLOW:  #aeae00;
+    --SIZE:  200px;
 }
 
-$ERROR_COLOR: var(--ERROR_COLOR);
-$ERROR_BORDER_COLOR: var(--ERROR_BORDER_COLOR);
-$ERROR_BACKGROUND_COLOR: var(--ERROR_BACKGROUND_COLOR);
+.button {
+  color: var(--RED);
+  background: var(--YELLOW);
+  border: #333333;
+  height: 20px;
+  width: var(--SIZE);
+}
 ```
+
+##### ✔ GOOD
+
 ```scss
-// theme/size.scss
+// theme/colors.css
 :root {
-  --SMAL_BLOCK_HEIGHT: 20px;
-  --COLUMN_WIDTH: 12px;
+  // Level 1 - Values
+  --MAIN_RED_COLOR: #c15454;
+  --LIGHT_RED_COLOR: #e19494;
+  --DARCK_RED_COLOR: #4e2222;
+  --MAIN_YELLOW_COLOR: #aeae00;
 
-  --ERROR_BLOCK_HEIGHT: var(--SMAL_BLOCK_HEIGHT);
-  --ERROR_BLOCK_WIDTH: var(--COLUMN_WIDTH);
+  // Level 2 - Purpose
+  --ERROR_COLOR: var(--MAIN_RED_COLOR);
+  --ERROR_BORDER_COLOR: var(--LIGHT_RED_COLOR);
+  --ERROR_BACKGROUND_COLOR: var(--LIGHT_RED_COLOR);
 }
-
-$ERROR_BLOCK_HEIGHT: var(--ERROR_BLOCK_HEIGHT);
-$ERROR_BLOCK_WIDTH: var(--ERROR_BLOCK_WIDTH);
 ```
 
 ```scss
-@import 'theme/colors';
-@import 'theme/size';
+// theme/sizes.css
+:root {
+  --S_SIZE: 5px;
+  --M_SIZE: 10px;
+  --L_SIZE: 20px;
+  --XL_SIZE: 40px;
 
-.header {
-  color: $ERROR_COLOR;
-  background: $ERROR_BACKGROUND_COLOR;
-  border: $ERROR_BORDER_COLOR;
-  height: $ERROR_BLOCK_HEIGHT;
-  width: $ERROR_BLOCK_WIDTH;
+  --ROW_HEIGHT: var(--L_SIZE);
+  --ROW_VERTICAL_INDENT: var(--M_SIZE);
+  --ROW_HORIZONTAL_INDENT: var(--S_SIZE);
+  --BUTTON_HEIGHT: var(--L_SIZE);
+}
+```
 
-  .row {
-    width: $ERROR_BLOCK_WIDTH;
-  }
+```scss
+// components/button.css
+.button {
+  height: var(--BUTTON_HEIGHT);
+}
+```
+
+```scss
+// components/submitButton.css
+.submitButton {
+  // Level 3 - Components
+  --SUBMIT_BUTTON_HEIGHT: var(--BUTTON_HEIGHT);
+  
+  height: var(--SUBMIT_BUTTON_HEIGHT);
+  line-height: var(--SUBMIT_BUTTON_HEIGHT);
+}
+
+.errorPopup {
+  // Level 3 - Components
+  --ERROR_POPUP_TEXT_COLOR: var(--ERROR_TEXT_COLOR);
+  --ERROR_POPUP_BORDER_COLOR: var(--ERROR_FRAMING_COLOR);
+
+  color: var(--ERROR_POPUP_TEXT_COLOR);
+  border-color: var(--ERROR_POPUP_BORDER_COLOR);
 }
 ```
 
