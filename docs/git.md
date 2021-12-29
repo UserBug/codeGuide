@@ -22,11 +22,15 @@ Any branching strategies or approaches adopted in the repository should extend f
 
 #### The main branch of the project should always be tested and stable
 
+---
+
 ### Recommended branching strategies:
 
 * [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html) 
 * [Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 * [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow)
+
+---
 
 ### Feature branch recommendations
 * Should have a short life.
