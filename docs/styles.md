@@ -212,7 +212,7 @@ ERROR_POPUP_TEXT_COLOR
 :root {
     --RED: #c15454;
     --YELLOW:  #aeae00;
-    --SIZE:  200px;
+    --SIZE: 200px;
 }
 
 .button {
@@ -221,6 +221,22 @@ ERROR_POPUP_TEXT_COLOR
   border: #333333;
   height: 20px;
   width: var(--SIZE);
+}
+```
+
+```javascript
+const root = {
+    RED: "#c15454",
+    YELLOW: "#aeae00",
+    SIZE: "200px",
+};
+
+const button = {
+  color: root.RED,
+  background: root.YELLOW,
+  border: "#333333",
+  height: "20px",
+  width: root.SIZE,
 }
 ```
 
@@ -284,6 +300,68 @@ ERROR_POPUP_TEXT_COLOR
 }
 ```
 
+```javascript
+// theme/colors.js
+
+const COLOR_VALUES = {
+  // Level 1 - Values
+  MAIN_RED_COLOR: "#c15454",
+  LIGHT_RED_COLOR: "#e19494",
+  DARCK_RED_COLOR: "#4e2222",
+  MAIN_YELLOW_COLOR: "#aeae00",
+};
+
+const COLORS = {
+  // Level 2 - Purpose
+  ERROR_COLOR: COLOR_VALUES.MAIN_RED_COLOR,
+  ERROR_BORDER_COLOR: COLOR_VALUES.LIGHT_RED_COLOR,
+  ERROR_BACKGROUND_COLOR: COLOR_VALUES.LIGHT_RED_COLOR,
+};
+```
+
+```javascript
+// theme/sizes.js
+
+const SIZE_VALUES = {
+  // Level 1 - Values
+  S_SIZE: 5,
+  M_SIZE: 10,
+  L_SIZE: 20, 
+  XL_SIZE: 40,
+};
+
+const SIZE = {
+  // Level 2 - Purpose
+  ROW_HEIGHT: SIZE_VALUES.L_SIZE,
+  ROW_VERTICAL_INDENT: SIZE_VALUES.M_SIZE,
+  ROW_HORIZONTAL_INDENT: SIZE_VALUES.S_SIZE,
+  BUTTON_HEIGHT: SIZE_VALUES.L_SIZE,
+};
+```
+
+```javascript
+// components/button.style.js
+const BUTTON_STYLE = {
+  // Level 3 - Components
+  height: SIZE.BUTTON_HEIGHT,
+};
+```
+
+```javascript
+// components/submitButton.style.css
+const SUBMIT_BUTTON_STYLE = {
+  // Level 3 - Components
+  height: SIZE.BUTTON_HEIGHT,
+  lineHeight: SIZE.BUTTON_HEIGHT,
+};
+
+const ERROR_POPUP_STYLE = {
+  // Level 3 - Components
+  color: COLOR.ERROR_TEXT_COLOR,
+  borderColor: COLOR.ERROR_FRAMING_COLOR,
+}
+```
+
 ---
 
 ### Colors should be specified without opacity
@@ -294,10 +372,16 @@ Therefore, their various combinations can lead to stylistic bugs.
 ```scss
 $DARK_COLOR: rgba(#000000, .6);
 ```
+```javascript
+const DARK_COLOR = 'rgba(0, 0, 0, 0.8)';
+```
 
 ##### ✔ GOOD 
 ```scss
 $DARK_COLOR: #222222;
+```
+```javascript
+const DARK_COLOR = 'rgba(50, 50, 50)';
 ```
 
 ---
