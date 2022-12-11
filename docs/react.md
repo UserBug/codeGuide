@@ -1,9 +1,10 @@
 ## React
 
 ### All Components must have PropTypes
+
 This basic rule helps to identify and avoid many errors.  
 PropTypes provide dynamic typing at the development stage.  
-What neither TypeScript nor JSDoc can`t provide.  
+What neither TypeScript nor JSDoc can`t provide.
 
 When using TypeScript, the component interfaces must be compiled to PropTypes for development bundle.  
 [babel-plugin-typescript-to-proptypes](https://www.npmjs.com/package/babel-plugin-typescript-to-proptypes)
@@ -20,22 +21,27 @@ SomeComponent.propTypes = {
 ---
 
 ### Dont use destructuring for props
+
 Referring to the ```props``` object helps to easily distinguish the data that came to the component  
 from the variables and functions created inside.
 
-In components with more than 400 lines, 
+In components with more than 400 lines,
 it is very difficult to understand what data comes from properties/state/vars.
 
 It is easy to confuse a local variable with a property and apply unacceptable operations (for example object mutations).
 
 There is no clear arguments to determine how deep to destructure properties:
+
 ##### ❌ BAD
+
 ```javascript
 const Users = ({ users: { data: { main: { id } } } }) => {};
 ```
 
 When destructuring, it is possible to set default values. Should be used defaultProps:
+
 ##### ❌ BAD
+
 ```javascript
 const Users = ({ max = 10, isReadOnly = false, orderBy = 'id' }) => {}
 ```
@@ -43,6 +49,7 @@ const Users = ({ max = 10, isReadOnly = false, orderBy = 'id' }) => {}
 [eslint - react/destructuring-assignment - never](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md)
 
 ##### ❌ BAD
+
 ```javascript
 const MyButton = ({ type, size, text, changeType }) => {
   const [ stateCount, setStateCount ] = useState(0);
@@ -66,7 +73,8 @@ const MyButton = ({ type, size, text, changeType }) => {
 };
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```javascript
 const myButton = (props) => {
   const [ stateCount, setStateCount ] = useState(0);
@@ -93,6 +101,7 @@ const myButton = (props) => {
 In the typescript, it is best to write properties in the form of interfaces, this will allow them to be reused:
 
 ##### ✔ GOOD
+
 ```typescript
 interface BudgetProps {
     readonly budgeted: number,
@@ -110,11 +119,12 @@ const DepartmentOverview: React.FC<DepartmentProps> = (props: DepartmentProps) =
 ---
 
 ### Use Redux only for common data
+
 Redux is a useful tool, but it has disadvantages.  
 Each called action causes a complete copy of the entire storage.  
 In an App with only one reducer, this behavior slows the rendering of components insignificantly.  
 The slowing increases with each new middleware.  
-In addition, careless work with the repository can lead to the accumulation of unnecessary data and memory leaks.  
+In addition, careless work with the repository can lead to the accumulation of unnecessary data and memory leaks.
 
 Therefore, use connection to Redux only if:
 
@@ -122,40 +132,46 @@ Therefore, use connection to Redux only if:
 * The data needs to be saved after the component has been unmount.
 * Data is used by 2 or more components that do not have a single close parent in the tree.
 
-For example: User credential, current localization, chat data, company data…  
+For example: User credential, current localization, chat data, company data…
 
 [redux.js - Using local component state is fine](https://redux.js.org/faq/organizing-state#do-i-have-to-put-all-my-state-into-redux-should-i-ever-use-reacts-setstate)
 
 ---
 
 ### Save only plain serializable objects in Redux
+
 During operation, Redux can compare storage values or save previous copies of the data.  
-Storing reference data can lead to improper operation of reducers and memory leaks.  
+Storing reference data can lead to improper operation of reducers and memory leaks.
 
 [redux.js.org - functions, promises, or other non-serializable](https://redux.js.org/faq/organizing-state#can-i-put-functions-promises-or-other-non-serializable-items-in-my-store-state)
 
 ---
 
 ### Avoid “connect” of Redux
+
 When some component "connect()" to Redux it create new wrapper,  
 this is another component in the tree and another code to execute before rendering.  
-All "mapStateToProps" of all components in the application will be called for any action in the application. This often leads to unnecessary rendering.  
-Try to use "connect()" only for Compounds like "Page" which are controlled by router and only one of the routes will be displayed.  
-Next, pass the data through the flow of "Props".  
+All "mapStateToProps" of all components in the application will be called for any action in the application. This often
+leads to unnecessary rendering.  
+Try to use "connect()" only for Compounds like "Page" which are controlled by router and only one of the routes will be
+displayed.  
+Next, pass the data through the flow of "Props".
 
 ---
 
 ### Contract value/onChange
+
 Interfaces should be standardized, use properties “onChange” and “value” for the controlled components.  
 Using standard names for the properties of the controlled components helps to better understand their purpose,  
 eliminates duplicates and zoo of property names.  
-For components working with complex entities, 
-it is better to specify the form of this entity and return it all in the method “onChange”.  
+For components working with complex entities,
+it is better to specify the form of this entity and return it all in the method “onChange”.
 
 * Data schema of the “value” must be the same as the data schema returned from “onChange” handler.
 * You should put to “value” only data which is the result of User actions or can be changed by the User.
 
 ##### ❌ BAD
+
 ```javascript
 DatePicker.propTypes = {
     onDateChange: PropTypes.func,
@@ -171,7 +187,8 @@ ProductEditor.propTypes = {
 }
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```javascript
 DatePicker.propTypes = {
     onChange: PropTypes.func,
@@ -191,12 +208,14 @@ ProductEditor.propTypes = {
 ---
 
 ### Always memorize components
+
 To prevent unnecessary rerender of component and increases performance,  
 each component should be memorized.  
 Use recommended ways:
 
 * shouldComponentUpdate
-* extends React.PureComponent (Be careful, PureComponent correctly checks only immutable properties, objects are checked by reference.)
+* extends React.PureComponent (Be careful, PureComponent correctly checks only immutable properties, objects are checked
+  by reference.)
 * React.memo
 
 [reactjs.org - shouldComponentUpdate In Action](https://reactjs.org/docs/optimizing-performance.html#shouldcomponentupdate-in-action)
@@ -204,32 +223,36 @@ Use recommended ways:
 ---
 
 ### Don't use context
+
 One of the most important reason:  
 Parents did not know about context that need for children.  
 This can lead to a lack of updates in children.  
 Main idea of React is Components, they are "lazy" and react only on Props change.  
-(PS: That's why library called "React")  
+(PS: That's why library called "React")
 
 If you want change something in child Component you should set new Props to it.
 
 * All Props are as clear and visible as possible.  
-But the context remains hidden and unseen.  
-This leads to a misunderstanding of code and data source on the page,  
-which greatly increases the number of bugs and the time to resolve them.
+  But the context remains hidden and unseen.  
+  This leads to a misunderstanding of code and data source on the page,  
+  which greatly increases the number of bugs and the time to resolve them.
 * Props have strict typing and involved in the life cycle of the component.
 * Passing data thru props give possibility to use clear ways of memorization.
 
 Context does not have these advantages.
 
 Official React documentation say:  
-"If you only want to avoid passing some props through many levels, component composition is often a simpler solution than context."  
+"If you only want to avoid passing some props through many levels, component composition is often a simpler solution
+than context."  
 [reactjs.org - Before You Use Context](https://reactjs.org/docs/context.html#before-you-use-context)
 
-> After the release of React 16.3, the context became much safer. Despite this, the context should be used only in special exceptional cases.
+> After the release of React 16.3, the context became much safer. Despite this, the context should be used only in
+> special exceptional cases.
 
 ---
 
 ### useCallback in Functional Components
+
 In body of Functional Component each variable will be created again during render.  
 It can lead to child re renders because they will receipt new function each time.  
 To improve performance, we should not create renderProps inside functional components  
@@ -238,6 +261,7 @@ and avoid re-creation of handlers.
 [reactjs.org - useCallback](https://ru.reactjs.org/docs/hooks-reference.html#usecallback)
 
 ##### ❌ BAD
+
 ```javascript
 const MyComponent = (props) => {
   const onClick = (e) => (
@@ -255,7 +279,8 @@ const MyComponent = (props) => {
 };
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```javascript
 const onClick = (e) => (
   console.log(e)

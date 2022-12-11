@@ -4,6 +4,7 @@ It is recommended to use as a common rules:
 [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 
 ### Use Semicolons
+
 When JavaScript encounters a line break without a semicolon,  
 it uses a set of rules called Automatic Semicolon Insertion  
 to determine whether it should regard that line break as the end of a statement,  
@@ -15,6 +16,7 @@ Explicitly terminating your statements and
 configuring your linter to catch missing semicolons will help prevent you from encountering issues.
 
 ##### ❌ BAD
+
 ```javascript
 // Raises exception
 const luke = {}
@@ -35,6 +37,7 @@ function foo() {
 ```
 
 ##### ✔ GOOD
+
 ```javascript
 const luke = {};
 const leia = {};
@@ -50,29 +53,33 @@ const reaction = "No! That’s impossible!";
 
 function foo() {
     return 'search your feelings, you know it to be foo';
-}
+};
 ```
 
 [Airbnb - JS Styleguide - Semicolons required](https://github.com/airbnb/javascript#semicolons--required)  
-[Google - JS Styleguide - Semicolons are required](https://google.github.io/styleguide/jsguide.html#formatting-semicolons-are-required)  
+[Google - JS Styleguide - Semicolons are required](https://google.github.io/styleguide/jsguide.html#formatting-semicolons-are-required)
 
 ---
 
 ### New variables should contain null
-All created, without any known values, new variables should contain null.  
-This rule helps to easily distinguish non-existent properties and variables from cleaned or already created but not have value.
 
-Object.prototype.hasOwnProperty() cannot be conveniently applied to large objects.  
+All created, without any known values, new variables should contain null.  
+This rule helps to easily distinguish non-existent properties and variables from cleaned or already created but not have
+value.
+
+Object.prototype.hasOwnProperty() cannot be conveniently applied to large objects.
 
 It also helps maintain consistency with the server side.  
-In queries "undefined" and "null" have different meanings:  
-- "undefined" - Value not set  
-- "null" - The value is set as void  
+In queries "undefined" and "null" have different meanings:
+
+- "undefined" - Value not set
+- "null" - The value is set as void
 
 [MDN Web Docs - null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null)  
 [eslint - init-declarations](https://eslint.org/docs/rules/init-declarations)
 
 ##### ❌ BAD
+
 ```javascript
 let a;
 const obj = {
@@ -85,22 +92,24 @@ console.log(obj.c) // undefined
 console.log(obj.d) // undefined
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```javascript
 let a = null;
 const obj = {
     c: null,
 };
 
-console.log(a) // null
-console.log(b) // undefined
-console.log(obj.c) // null
-console.log(obj.d) // undefined
+console.log(a); // null
+console.log(b); // undefined
+console.log(obj.c); // null
+console.log(obj.d); // undefined
 ```
 
 ---
 
 ### Use destructuring in functions arguments
+
 If function accept more than one argument use destructuring.
 
 Benefits:
@@ -108,7 +117,8 @@ Benefits:
 * Eliminates dependence on order of arguments
 * Arguments become named
 
-##### ❌ BAD 
+##### ❌ BAD
+
 ```javascript
 const IN_BOX = 6;
 const calculatePrice = (itemPrice, count, discount = 1, balance = 0) => (
@@ -123,7 +133,8 @@ const price = calculatePrice(
 );
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```javascript
 const IN_BOX = 6;
 const calculatePrice = ({ itemPrice, count, discount = 1, balance = 0 }) => (
@@ -140,12 +151,15 @@ const price = calculatePrice({
 ---
 
 ### Avoid nested destruction
+
 Retrieving a value from a deep level of an object using destructuring syntax  
 has a number of undesirable consequences:
+
 * Finding the paths used to get values from Objects in a project is very difficult.
 * Creation of scripts for analyzing and modifying the codebase is difficult.
 
 ##### ❌ BAD
+
 ```javascript
 import someVeryLargeAndMultilevelObject from 'strangeObjectsCollection';
 
@@ -155,6 +169,7 @@ const myObj = { varFromLevel1: { varFromLevel2: 111 } };
 ```
 
 ##### ✔ GOOD
+
 ```javascript
 import someVeryLargeAndMultilevelObject from 'strangeObjectsCollection';
 
@@ -163,17 +178,20 @@ const varFromLevel4 = someVeryLargeAndMultilevelObject.varFromLevel1.varFromLeve
 
 ---
 
-### Use arrow functions 
+### Use arrow functions
+
 in all cases when you don't need context of this particular function.
 
 ##### ❌ BAD
+
 ```javascript
 function sum ({ a, b }) {
     return a + b;
 }
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```javascript
 const sum = ({ a, b }) => (a + b); // "sum" is named arrow function which has name in stacktrace
 ```
@@ -184,12 +202,14 @@ const sum = ({ a, b }) => (a + b); // "sum" is named arrow function which has na
 ---
 
 ### Prefer single return
+
 It will be a single place you have to look to trace backwards and figure out what a function returns.  
 Easier to debug and easier to modify.  
 Multiple returns create interrupts in function execution,  
 making it harder to find unused code.
 
 ##### ❌ BAD
+
 ```javascript
 const sayMyName = (who) => {
   if (who === 'David Guetta') {
@@ -201,7 +221,8 @@ const sayMyName = (who) => {
 };
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```javascript
 const sayMyName = (who) => {
   let partOfText = `${who}: I do not know.`;
@@ -218,7 +239,8 @@ const sayMyName = (who) => {
 
 ---
 
-### Use public class fields syntax 
+### Use public class fields syntax
+
 Use the constructor only when necessary,  
 otherwise define public properties and methods in the class body.
 
@@ -229,6 +251,7 @@ otherwise define public properties and methods in the class body.
 [React doc - Autobinding](https://reactjs.org/docs/react-without-es6.html#autobinding)
 
 ##### ❌ BAD
+
 ```javascript
 class Basket {
   constructor () {
@@ -242,7 +265,8 @@ class Basket {
 }
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```javascript
 class Basket {
   count = 0;
@@ -255,16 +279,18 @@ class Basket {
 
 ---
 
-### Prefer Promise 
+### Prefer Promise
+
 Prefer Promise and Async functions instead of Callbacks.  
 Async functions as a very powerful tool of JavaScript.   
 Each Promise creates a new Microtask which can be executed in the Microtask queue of the Event Loop.   
 This architecture allows split calculations on "independent" tasks and does not block the whole Event Loop.   
-Callbacks in some cases can create synchronous chains that block the user interface.  
+Callbacks in some cases can create synchronous chains that block the user interface.
 
 [MDN - Using microtasks in JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide)
 
 ##### ❌ BAD
+
 ```javascript
 const someAsyncFunction = ({ a, b }, cb) => {
   const businessLogicValue = a + b;
@@ -290,6 +316,7 @@ const someAsyncFunction = ({ a, b }, cb) => {
 ```
 
 ##### ✔ GOOD
+
 ```javascript
 const someAsyncFunction = ({ a, b }) => (
   new Promise((res, rej) => {
@@ -315,21 +342,23 @@ const someAsyncFunction = async ({ a, b }) => {
 ---
 
 ### No errors, warnings, logs in console
+
 Developer console is a very powerful and helpful tool.  
 It gives information to the developer about the health of the application.  
 Any message in there requires attention, and usually some action.  
 Errors and warnings are signals about existing bugs in the code.  
 Any ticket cannot be closed if there exist those messages in the console.  
 Showing some debug data in the consol it is helpful,  
-but all this logs should be removed before code review and merge.  
+but all this logs should be removed before code review and merge.
 
 [eslint - no-console](https://eslint.org/docs/rules/no-console)
 
 ---
 
 ### JSDoc for static typing
+
 **JSDoc** - is a markup language used to annotate JavaScript source code files.  
-**TypeScript** - is a programming language.  
+**TypeScript** - is a programming language.
 
 Benefits of JSDoc:
 
@@ -341,7 +370,7 @@ Benefits of JSDoc:
 
 [Google - JS Styleguide - JSDoc](https://google.github.io/styleguide/jsguide.html#jsdoc)
 [eslint - require-jsdoc](https://eslint.org/docs/rules/require-jsdoc)  
-[Type Safe JavaScript and TypeScript with JSDoc](https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76)  
+[Type Safe JavaScript and TypeScript with JSDoc](https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76)
 
 ---
 
@@ -354,15 +383,19 @@ Benefits of JSDoc:
 
 ##### ❌ Frequent misconceptions about TypeScript:
 
-* Provides only **Static Type-checking** at the time of writing code.  There are no type checks in the compiled code.  JavaScript can be typed with JSDoc.
-* TypeScript it is not ECMAScript. There is absolutely no guarantee that the TypeScript features will be included in the next ECMAScript.
-* At the moment (2020) there is no reliable and recommended way to run TypeScript for production either in the browser or on the server.
+* Provides only **Static Type-checking** at the time of writing code. There are no type checks in the compiled code.
+  JavaScript can be typed with JSDoc.
+* TypeScript it is not ECMAScript. There is absolutely no guarantee that the TypeScript features will be included in the
+  next ECMAScript.
+* At the moment (2020) there is no reliable and recommended way to run TypeScript for production either in the browser
+  or on the server.
 
 **Summary:** The choice between TypeScript and JavaScript most of all depends on your taste preferences.
 
 ---
 
 ### Forbidden to use any languages other than English in the code.
+
 To display the text in a local language, use the function translator.
 
 Benefits:
@@ -373,8 +406,8 @@ Benefits:
 * Reduces the size of the bundle.
 * Comments in English show respect for all other developers.
 
-
 ##### ❌ BAD
+
 ```javascript
 /**
 * Показать ошибку если страница недоступна
@@ -388,7 +421,8 @@ const renderWarning = () => (
 );
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```javascript
 /**
 * Show error if page not available
@@ -405,16 +439,18 @@ const renderWarning = () => (
 ---
 
 ### Remove unnecessary code
+
 All console logs should be deleted from files before the feature branch can be merged to the develop.  
-These unnecessary logs make it difficult for other developers to debug the code and can show private data.  
+These unnecessary logs make it difficult for other developers to debug the code and can show private data.
 
 Delete commented out parts of the code.  
-Blocks of code in the commentaries make it very difficult to read it and unnecessarily increase the size of the files.  
+Blocks of code in the commentaries make it very difficult to read it and unnecessarily increase the size of the files.
 
 ---
 
 ### Respect all eslint rules
-Eslint is a very important tool in the development. It can be distracting in the beginning, but it allow: 
+
+Eslint is a very important tool in the development. It can be distracting in the beginning, but it allow:
 
 * Check correct syntax.
 * Perform static type checking.
@@ -428,7 +464,8 @@ all clarifications and differences should be approved with lead developers and a
 ---
 
 ### Discuss and describe each new npm package
-If your code required some new npm package, you should:  
+
+If your code required some new npm package, you should:
 
 1. Discuss the reasons and need for the package with lead developers.
 2. If the package is approved, add it to file "package.md": date, your name and purpose of this package.
@@ -440,6 +477,7 @@ If some package will require update or replacement, information will help to fin
 ---
 
 ### Event handler should not return a promise
+
 Event-driven the approach implies the presence of an event  
 and queue asynchronous event processing using handlers.  
 Each event can create new ones,  
@@ -457,6 +495,7 @@ Any asynchronous code must be able to catch errors inside the handler.
 [Wikipedia - Event driven_architecture](https://en.wikipedia.org/wiki/Event-driven_architecture)
 
 ##### ❌ BAD
+
 ```javascript
 const MyComponent = (props) => {
   const onClick = useCallback((
@@ -472,6 +511,7 @@ const MyComponent = (props) => {
 ```
 
 ##### ❌ BAD
+
 ```javascript
 const onClick =  async (event) => {
   await logClick(event.someDataFromEvent);
@@ -482,6 +522,7 @@ domElement.addEventListener('click', onClick);
 ```
 
 ##### ✔ GOOD
+
 ```javascript
 const MyComponent1 = (props) => {
   const onClick = useCallback((
@@ -500,6 +541,7 @@ const MyComponent1 = (props) => {
 ```
 
 ##### ✔ GOOD
+
 ```javascript
 const MyComponent2 = (props) => {
   const onClick = useCallback((
@@ -517,6 +559,7 @@ const MyComponent2 = (props) => {
 ```
 
 ##### ✔ GOOD
+
 ```javascript
 const onClick =  (event) => {
   (async () => {

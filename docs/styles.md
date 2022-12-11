@@ -1,6 +1,7 @@
 ## Styles
 
 ### Dont use inline styles
+
 Inline styles have a big impact on application performance:
 
 * To display them, the browser has to transform the string into a style for each item in each render
@@ -12,6 +13,7 @@ Inline styles have a big impact on application performance:
 [reactjs - Are inline styles bad?](https://reactjs.org/docs/faq-styling.html#are-inline-styles-bad)
 
 ##### ❌ BAD
+
 ```javascript
 render() {
     return (
@@ -20,12 +22,14 @@ render() {
 }
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```scss
 .container {
   color: $MY_COLOR_VAR;
 }
 ```
+
 ```javascript
 import style from './myComponent.scss';
 
@@ -39,17 +43,20 @@ render() {
 ---
 
 ### Prefer class agents long child selectors
+
 Long tag selectors tie styles to the structure of components.  
 The hierarchy of elements within a component can change frequently,  
 which immediately breaks styles.  
-To prevent this, create and use more class names.  
+To prevent this, create and use more class names.
 
 ##### ❌ BAD
+
 ```scss
 .myComponent > div > div {}
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```scss
 .myComponent .header {}
 ```
@@ -57,7 +64,9 @@ To prevent this, create and use more class names.
 ---
 
 ### Avoid useless nesting
+
 ##### ❌ BAD
+
 ```scss
 .myComponent {
     & > .focused {
@@ -66,7 +75,8 @@ To prevent this, create and use more class names.
 }
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```scss
 myComponent .focused {
 
@@ -74,12 +84,15 @@ myComponent .focused {
 ```
 
 ---
+
 ### Use global class .RTL and .LTR to made different style for language direction
+
 Style of Components should be separated from they structure.  
 It helps to do less changes in JSX and reuse components.  
-Complicated styles for different languages can be solved only by SCSS  
+Complicated styles for different languages can be solved only by SCSS
 
 ##### ❌ BAD
+
 ```scss
 .rtl {
     transform: rotate(90deg);
@@ -91,6 +104,7 @@ Complicated styles for different languages can be solved only by SCSS
     transform-origin: center;
 }
 ```
+
 ```javascript
 render() {
     return (
@@ -100,7 +114,8 @@ render() {
 
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```scss
 .icon {
   transform-origin: center;
@@ -114,6 +129,7 @@ render() {
   transform: rotate(-90deg);
 }
 ```
+
 ```javascript
 render() {
     return (
@@ -125,15 +141,18 @@ render() {
 ---
 
 ### SCSS Variables and Naming conventions
+
 Use variables for all numerical values, quantities, and sizes excluding atomic (0, 100%, etc.)  
-All variables should be placed in the general theme files and distributed according to their purpose (sizes, indents, colors, borders, shadows etc.).  
-This will improve the visibility of the project and allow you to quickly change them.  
+All variables should be placed in the general theme files and distributed according to their purpose (sizes, indents,
+colors, borders, shadows etc.).  
+This will improve the visibility of the project and allow you to quickly change them.
 
 ---
 
 ### Use css variables
+
 If the requirements of your project allow you to use pure css constants - do it.  
-This will allow you to:  
+This will allow you to:
 
 * Store style constants in one place
 * Change styles dynamically with css
@@ -156,7 +175,9 @@ $PRIMARY_VERY_LIGHT_COLOR: var(--PRIMARY_VERY_LIGHT_COLOR);
 ---
 
 ### Variables from Generic to Specific
+
 Using 3 levels of abstraction for style variables allows you to:
+
 * Remove the number of duplicate styles
 * Standardize the design system
 * Clearly describe the purpose of each variable
@@ -168,11 +189,14 @@ Using 3 levels of abstraction for style variables allows you to:
 * Inconsistencies or a wide variety of meanings are immediately visible.
 
 #### Level 1 - Values
-For encapsulating absolute values only.
-* Stores only values
-* Variables should NOT be used directly in component styles  
 
-__Name pattern__: `Adjective` `What it is ?`   
+For encapsulating absolute values only.
+
+* Stores only values
+* Variables should NOT be used directly in component styles
+
+__Name pattern__: `Adjective` `What it is ?`
+
 ```
 MAIN_FONT
 XL_INDENT
@@ -181,11 +205,14 @@ RED_COLOR
 ```
 
 #### Level 2 - Purpose
+
 It is intended to describe the purpose.
-* Get values only from "Level 1 - Values"  
+
+* Get values only from "Level 1 - Values"
 * Variables can be used directly in component styles
 
-__Name pattern__: `Where will be used?` `Adjective` `What it is ?`  
+__Name pattern__: `Where will be used?` `Adjective` `What it is ?`
+
 ```
 ROW_MAIN_FONT
 BLOCK_HORIZONTAL_INDENT
@@ -194,11 +221,14 @@ ERROR_TEXT_COLOR
 ```
 
 #### Level 3 - Component
+
 Describes UI component styles.
+
 * Get values only from "Level 2 - Purpose"
 * Variables can be used directly in component styles
 
-__Name pattern__: `Component` `Where will be used?` `Adjective` `What it is ?`   
+__Name pattern__: `Component` `Where will be used?` `Adjective` `What it is ?`
+
 ```
 MENU_ROW_MAIN_FONT
 ARTICLE_BLOCK_HORIZONTAL_INDENT
@@ -206,8 +236,8 @@ LINK_BOLD_FONT
 ERROR_POPUP_TEXT_COLOR
 ```
 
-
 ##### ❌ BAD
+
 ```css
 :root {
     --RED: #c15454;
@@ -365,21 +395,26 @@ const ERROR_POPUP_STYLE = {
 ---
 
 ### Colors should be specified without opacity
+
 Transparency makes the color dependent on the background.  
-Therefore, their various combinations can lead to stylistic bugs.  
+Therefore, their various combinations can lead to stylistic bugs.
 
 ##### ❌ BAD
+
 ```scss
 $DARK_COLOR: rgba(#000000, .6);
 ```
+
 ```javascript
 const DARK_COLOR = 'rgba(0, 0, 0, 0.8)';
 ```
 
-##### ✔ GOOD 
+##### ✔ GOOD
+
 ```scss
 $DARK_COLOR: #222222;
 ```
+
 ```javascript
 const DARK_COLOR = 'rgba(50, 50, 50)';
 ```
@@ -387,10 +422,11 @@ const DARK_COLOR = 'rgba(50, 50, 50)';
 ---
 
 ### Same names in the design instruments and in the code
+
 It doesn't matter what tools you use to create your design  
 (Figma; Zeplin; Sketch; Adobe XD; InVision...)  
 use same variables names in the design instruments and in the code.  
-Take time to agree on common rules with designers at the very beginning of the project.  
+Take time to agree on common rules with designers at the very beginning of the project.
 
 * Speeds up design implementation
 * Makes it easier to spot style issues
