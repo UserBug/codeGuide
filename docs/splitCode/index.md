@@ -16,6 +16,14 @@ Deeper nesting can be fixed by
 
 ---
 
+### Reduce Heavy nesting
+
+[Reduce Heavy nesting - example](./reduceHeavyNesting.md)  
+It is recommended to allow only 2 level of nesting,  
+move the logic into separate new functions and methods.
+
+---
+
 ##### ❌ BAD
 
 ```javascript
