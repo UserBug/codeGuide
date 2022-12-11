@@ -4,6 +4,15 @@ This document was created to define clear criteria and ways to refactor code.
 Although the principles described are universal in themselves, the absolute meanings described in them may be adapted
 depending on the context of the project and development.
 
+### Cognitive Complexity
+An objective metric for identifying refactoring sites can be "Cognitive Complexity".
+Its high scores clearly indicate files that need improvement.
+All approaches described here are aimed at reducing the overall complexity in each file.  
+[CodeClimate - Cognitive Complexity](https://docs.codeclimate.com/docs/cognitive-complexity)  
+[G. Ann Campbell - SonarSource - Cognitive Complexity](https://www.sonarsource.com/docs/CognitiveComplexity.pdf)  
+[eslint-plugin-sonarjs - cognitive-complexity](https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/cognitive-complexity.md)  
+[JetBrains - plugin - CognitiveComplexity](https://plugins.jetbrains.com/plugin/12024-cognitivecomplexity)
+
 ---
 
 ### Move Out Nested callbacks
