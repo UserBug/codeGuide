@@ -17,7 +17,7 @@ All approaches described here are aimed at reducing the overall complexity in ea
 
 ### Move Out Nested callbacks
 
-[Move Out Nested callbacks - example](./moveOutNestedCallbacks.md)  
+[Move Out Nested callbacks - read more](./moveOutNestedCallbacks.md)  
 It is recommended to allow only 1 level of nesting.
 Deeper nesting can be fixed by
 [Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) through
@@ -27,9 +27,17 @@ Deeper nesting can be fixed by
 
 ### Reduce Heavy nesting
 
-[Reduce Heavy nesting - example](./reduceHeavyNesting.md)  
+[Reduce Heavy nesting - read more](./reduceHeavyNesting.md)  
 It is recommended to allow only 2 level of nesting,  
 move the logic into separate new functions and methods.
+
+---
+
+### Remove Duplicates
+
+[Remove Duplicates - read more](./removeDuplicates.md)  
+It is recommended to immediately move duplicated blocks into separate functions.  
+And strive to reduce the metric indicating the number of duplicates.
 
 ---
 
