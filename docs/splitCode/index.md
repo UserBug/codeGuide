@@ -41,6 +41,16 @@ And strive to reduce the metric indicating the number of duplicates.
 
 ---
 
+### Shorten Files
+
+[Shorten Files - read more](./shortenFiles.md)  
+The number of lines of code can serve as a trigger for the need to split a file.  
+It is recommended to shorten files to a maximum length of 250 lines.  
+To do this, you can turn larger files into folders,  
+moving all independent functions into new small files.
+
+---
+
 ##### ❌ BAD
 
 ```javascript
