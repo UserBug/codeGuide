@@ -51,6 +51,15 @@ moving all independent functions into new small files.
 
 ---
 
+### Slice Long Functions
+
+[Slice Long Functions - read more](./sliceLongFunctions.md)  
+It can be difficult to understand the long chain of sequential instructions.
+It is recommended to separate sequential instructions into logical blocks  
+and bring them into separate functions.
+
+---
+
 ##### ❌ BAD
 
 ```javascript
