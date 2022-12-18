@@ -60,6 +60,16 @@ and bring them into separate functions.
 
 ---
 
+### Sustain Single Responsibility
+
+[Sustain Single Responsibility - read more](./sustainSingleResponsibility.md)  
+By creating and dedicating one simple and clear task to each function, you simultaneously:
+* Make it easier to understand
+* Make it reusable in the future
+* Facilitate refactoring and collaboration
+
+---
+
 ##### ❌ BAD
 
 ```javascript
