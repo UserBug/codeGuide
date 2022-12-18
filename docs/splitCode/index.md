@@ -60,6 +60,14 @@ and bring them into separate functions.
 
 ---
 
+### Use One "third party API" per file
+
+[Use One "third party API" per file - read more](./useOneThirdPartyApiPerFile.md)  
+Transferring the direct use of third-party libraries and APIs into separate modules (Adapters)  
+helps to isolate the business logic from the implementation details of the tools.
+
+---
+
 ### Sustain Single Responsibility
 
 [Sustain Single Responsibility - read more](./sustainSingleResponsibility.md)  
