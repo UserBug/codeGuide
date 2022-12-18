@@ -48,6 +48,20 @@ All files and folders should have names that describe content.
 * "hoc" (use name of React class),
 * "middleware" (use type of middleware or what it do)
 
+```json
+"unicorn/filename-case": [
+	"error",
+	{
+		"cases": {
+			"camelCase": true,
+			"pascalCase": true
+		}
+	}
+]
+```
+[eslint-plugin-unicorn - filename-case](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md)  
+[eslint-plugin-unicorn - no-empty-file](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-empty-file.md)
+
 ---
 
 ### Group files by modules and not by type

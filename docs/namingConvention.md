@@ -50,6 +50,16 @@ const userIdsArray = [];
 [Google - JS Styleguide - Naming rules common to all identifiers](https://google.github.io/styleguide/jsguide.html#naming-rules-common-to-all-identifiers)  
 [Airbnb - JS Styleguide - Naming descriptive](https://github.com/airbnb/javascript#naming--descriptive)
 
+```json
+"unicorn/no-keyword-prefix": [
+    "error", {
+    "disallowedPrefixes": [
+        "new", "for", "class", "await", "let", "var", "const", "_"
+    ]}
+]
+```
+[eslint-plugin-unicorn - no-keyword-prefix](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-keyword-prefix.md)  
+
 ---
 
 ### Variables, functions, CSS classes

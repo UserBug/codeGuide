@@ -78,6 +78,10 @@ In queries "undefined" and "null" have different meanings:
 [MDN Web Docs - null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null)  
 [eslint - init-declarations](https://eslint.org/docs/rules/init-declarations)
 
+Combination of:  
+[eslint - no-undefined](https://eslint.org/docs/latest/rules/no-undefined)  
+[eslint - no-undef-init](https://eslint.org/docs/latest/rules/no-undef-init)  
+
 ##### ❌ BAD
 
 ```javascript
@@ -460,6 +464,8 @@ Eslint is a very important tool in the development. It can be distracting in the
 
 We are using list of Airbnb rules as common base,  
 all clarifications and differences should be approved with lead developers and added to the document.
+
+[eslint-plugin-unicorn - eslint-disable](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-abusive-eslint-disable.md)  
 
 ---
 
