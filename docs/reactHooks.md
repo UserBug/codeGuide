@@ -48,18 +48,18 @@ What benefits from it:
 
 ```javascript
 const MyForm = (props) => {
-  const [stateItemName, setStateItemName] = useState(props.defaultItemName);
-  const setItemName = useCallback((stringFromInput) => {
-    setStateItemName(
-      props.prefix && String(stringFromInput).indexOf(props.prefix) !== 0 ? (
-        `${props.prefix}${stringFromInput}`
-      ) : (stringFromInput)
-    );
-  }, [props.prefix]);
+    const [stateItemName, setStateItemName] = useState(props.defaultItemName);
+    const setItemName = useCallback((stringFromInput) => {
+        setStateItemName(
+            props.prefix && String(stringFromInput).indexOf(props.prefix) !== 0 ? (
+                `${props.prefix}${stringFromInput}`
+            ) : (stringFromInput)
+        );
+    }, [props.prefix]);
 
-  return (
-    <input value={stateItemName} onChange={setItemName} />
-  );
+    return (
+        <input value={stateItemName} onChange={setItemName}/>
+    );
 };
 ```
 
@@ -71,18 +71,18 @@ const MyForm = (props) => {
  * @param {String} [prefix]
  * @return {[String, Function]}
  */
-const useStateItemName = ({ defaultItemName, prefix = '' }) => {
-  const [stateItemName, setStateItemName] = useState(defaultItemName);
-  const setItemName = useCallback((stringFromInput) => {
-    setStateItemName(
-      prefix && String(stringFromInput).indexOf(prefix) !== 0 ? (
-        `${prefix}${stringFromInput}`
-      ) : (stringFromInput)
-    );
-  }, [prefix]);
+const useStateItemName = ({defaultItemName, prefix = ''}) => {
+        const [stateItemName, setStateItemName] = useState(defaultItemName);
+        const setItemName = useCallback((stringFromInput) => {
+            setStateItemName(
+                prefix && String(stringFromInput).indexOf(prefix) !== 0 ? (
+                    `${prefix}${stringFromInput}`
+                ) : (stringFromInput)
+            );
+        }, [prefix]);
 
-  return [stateItemName, setItemName];
-};
+        return [stateItemName, setItemName];
+    };
 
 export default useStateItemName;
 ```
@@ -96,7 +96,7 @@ const MyForm = (props) => {
         prefix: props.prefix,
     });
     return (
-      <input value={itemName} onChange={setItemName} />
+        <input value={itemName} onChange={setItemName}/>
     );
 };
 ```

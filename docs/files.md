@@ -59,6 +59,7 @@ All files and folders should have names that describe content.
 	}
 ]
 ```
+
 [eslint-plugin-unicorn - filename-case](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md)  
 [eslint-plugin-unicorn - no-empty-file](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-empty-file.md)
 
@@ -73,7 +74,7 @@ Much more often it is necessary to modify one particular module than all files w
 * Each module becomes independent, and can be implemented using a different architecture that better meets the
   requirements.
 
-[Screaming Architecture - Uncle Bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html)  
+[Screaming Architecture - Uncle Bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
 
 ##### ❌ BAD
 
@@ -131,7 +132,8 @@ This will allow the collector to make the TreeShacking and reduce the size of th
 ##### ❌ BAD
 
 ```javascript
-const myFunction = () => {};
+const myFunction = () => {
+};
 const mysomeConst = 3;
 const config = {};
 
@@ -145,7 +147,8 @@ export default {
 ##### ✔ GOOD
 
 ```javascript
-export const myFunction = () => {};
+export const myFunction = () => {
+};
 export const mysomeConst = 3;
 export const config = {};
 ```

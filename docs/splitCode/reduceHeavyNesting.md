@@ -1,4 +1,5 @@
 ### Split Code - Reduce Heavy nesting
+
 Operators that increase the nesting of logic:  
 `if for while switch`  
 Each new level makes it harder to understand the code,  
@@ -6,7 +7,7 @@ forcing you to remember the context of all the nesting boxes.
 In addition, it becomes much more difficult to track the scope of `let` and `const`.  
 It is recommended to move the logic into separate new functions and methods.
 
-[W3.org - Avoid heavy nesting](https://www.w3.org/wiki/JavaScript_best_practices#Avoid_heavy_nesting)  
+[W3.org - Avoid heavy nesting](https://www.w3.org/wiki/JavaScript_best_practices#Avoid_heavy_nesting)
 
 `max-depth: ["error", 2]`  
 [eslint - max-depth](https://eslint.org/docs/latest/rules/max-depth)

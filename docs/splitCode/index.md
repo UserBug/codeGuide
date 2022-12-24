@@ -3,17 +3,19 @@
 This document was created to define clear criteria and ways to refactor code.  
 Although the principles described are universal in themselves,  
 the absolute meanings described in them may be adapted  
-depending on the context of the project and development.  
+depending on the context of the project and development.
 
 Also remember that due to development time constraints and constantly changing business requirements,  
 you will not be able to achieve a perfect result.  
-But keeping 80% of your code clean is more than great and will allow you to save in a project:  
+But keeping 80% of your code clean is more than great and will allow you to save in a project:
+
 * [Maintainability](https://en.wikipedia.org/wiki/Maintainability)
 * [Scalability](https://en.wikipedia.org/wiki/Scalability)
 * [Extensibility](https://en.wikipedia.org/wiki/Extensibility)
 * [Observability](https://en.wikipedia.org/wiki/Observability)
 
 ### Cognitive Complexity
+
 An objective metric for identifying refactoring sites can be "Cognitive Complexity".
 Its high scores clearly indicate files that need improvement.
 All approaches described here are aimed at reducing the overall complexity in each file.  
@@ -81,6 +83,7 @@ helps to isolate the business logic from the implementation details of the tools
 
 [Sustain Single Responsibility - read more](./sustainSingleResponsibility.md)  
 By creating and dedicating one simple and clear task to each function, you simultaneously:
+
 * Make it easier to understand
 * Make it reusable in the future
 * Facilitate refactoring and collaboration

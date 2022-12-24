@@ -1,10 +1,11 @@
 ### Split Code - Slice Long Functions
-Long functions most often indicate the presence of a sequence of 
+
+Long functions most often indicate the presence of a sequence of
 [Imperative programming](https://en.wikipedia.org/wiki/Imperative_programming) in them,  
 it can be difficult to understand the long chain of sequential instructions.
 It is recommended to separate sequential instructions into logical blocks  
 and bring them into separate functions.  
-You can choose the number that best suits your project, but the number must be hard-defined.  
+You can choose the number that best suits your project, but the number must be hard-defined.
 
 Clean Code by [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin):
 _In the eighties we used to say that a function should be no bigger than a screen-full.  
@@ -24,7 +25,7 @@ Functions should hardly ever be 20 lines long._
 ```javascript
 const updateCalendar = (timestamp) => {
     const date = new Date(timestamp);
-    
+
     document.getElementById('day').innerHTML = date.getDate();
     document.getElementById('month').innerHTML = date.getMonth();
     document.getElementById('year').innerHTML = date.getFullYear();

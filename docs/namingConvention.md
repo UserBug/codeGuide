@@ -22,14 +22,17 @@ and do not abbreviate by deleting letters within a word.
 ```javascript
 let a = 2;
 const str = 'Mark';
-const fn = (e) => {};
-const cb = (e) => {};
+const fn = (e) => {
+};
+const cb = (e) => {
+};
 const obj = {};
 const BBCC = [];
 ```
 
 ```css
-.l {}
+.l {
+}
 ```
 
 ##### ✔ GOOD
@@ -37,14 +40,17 @@ const BBCC = [];
 ```javascript
 let maxAllowedAnswersInForm = 1;
 const userShortNameInTitle = 'Mark';
-const submitButtonOnClick = (event) => {};
-const sendFormDataOnError = (error) => {};
+const submitButtonOnClick = (event) => {
+};
+const sendFormDataOnError = (error) => {
+};
 const userDataObject = {};
 const userIdsArray = [];
 ```
 
 ```css
-.defaultLinkViewForArticles {}
+.defaultLinkViewForArticles {
+}
 ```
 
 [Google - JS Styleguide - Naming rules common to all identifiers](https://google.github.io/styleguide/jsguide.html#naming-rules-common-to-all-identifiers)  
@@ -52,13 +58,14 @@ const userIdsArray = [];
 
 ```json
 "unicorn/no-keyword-prefix": [
-    "error", {
-    "disallowedPrefixes": [
-        "new", "for", "class", "await", "let", "var", "const", "_"
-    ]}
+"error", {
+"disallowedPrefixes": [
+"new", "for", "class", "await", "let", "var", "const", "_"
+]}
 ]
 ```
-[eslint-plugin-unicorn - no-keyword-prefix](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-keyword-prefix.md)  
+
+[eslint-plugin-unicorn - no-keyword-prefix](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-keyword-prefix.md)
 
 ---
 
@@ -71,22 +78,26 @@ should use CamelCase naming with lowercase first letter.
 ```javascript
 var MySomeVar = 3;
 let mysomeVar = 3;
-const MY_SOME_FUNCTION = () => {};
+const MY_SOME_FUNCTION = () => {
+};
 ```
 
 ```css
-.someCSSClass {}
+.someCSSClass {
+}
 ```
 
 ##### ✔ GOOD
 
 ```javascript
 let mySomeVar = 3;
-const mySomeFunction = () => {};
+const mySomeFunction = () => {
+};
 ```
 
 ```css
-.someCssClass {}
+.someCssClass {
+}
 ```
 
 [Google - JS Styleguide - Naming local variable names](https://google.github.io/styleguide/jsguide.html#naming-local-variable-names)  
@@ -110,9 +121,11 @@ const SOME_CALCULATED_DATA = calculateData();
 ##### ✔ GOOD
 
 ```javascript
-class MyClass {};
-const MyClass = () => { /* constructor as function*/ };
-const FREEZE_OBJECT = Object.freeze({ })
+class MyClass {
+};
+const MyClass = () => { /* constructor as function*/
+};
+const FREEZE_OBJECT = Object.freeze({})
 const notFreezeObject = {};
 const someCalculatedData = calculateData();
 ```
@@ -131,14 +144,16 @@ All constants should use Snake case naming with all letters in uppercase.
 ```javascript
 const MySomeConst = 3;
 const mysomeConst = 'a';
-const MY_SOME_CONST = () => {};
+const MY_SOME_CONST = () => {
+};
 ```
 
 ##### ✔ GOOD
 
 ```javascript
 const MY_SOME_CONST = 3;
-const mySomeConst = () => {};
+const mySomeConst = () => {
+};
 ```
 
 [Google - JS Styleguide - Naming constant names](https://google.github.io/styleguide/jsguide.html#naming-constant-names)  
@@ -155,17 +170,23 @@ This will allow you to easily distinguish it in the code and improve your unders
 ##### ❌ BAD
 
 ```javascript
-const click = () => {};
-const user = () => {};
-const validForm = () => {};
+const click = () => {
+};
+const user = () => {
+};
+const validForm = () => {
+};
 ```
 
 ##### ✔ GOOD
 
 ```javascript
-const onClick = () => {};
-const saveUser = () => {};
-const isFormValid = () => {};
+const onClick = () => {
+};
+const saveUser = () => {
+};
+const isFormValid = () => {
+};
 ```
 
 [Google - JS Styleguide - Naming method names](https://google.github.io/styleguide/jsguide.html#naming-method-names)

@@ -15,7 +15,7 @@ Deeper nesting can be fixed by
 `max-nested-callbacks: ["error", 1]`  
 [eslint - max-nested-callbacks](https://eslint.org/docs/latest/rules/max-nested-callbacks)
 `consistent-function-scoping: ["error"]`  
-[eslint-plugin-unicorn - consistent-function-scoping](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/consistent-function-scoping.md)  
+[eslint-plugin-unicorn - consistent-function-scoping](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/consistent-function-scoping.md)
 
 ##### ❌ BAD
 

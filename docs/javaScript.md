@@ -21,7 +21,7 @@ configuring your linter to catch missing semicolons will help prevent you from e
 // Raises exception
 const luke = {}
 const leia = {}
-[luke, leia].forEach((jedi) => jedi.father = 'vader')
+    [luke, leia].forEach((jedi) => jedi.father = 'vader')
 
 const reaction = "No! That’s impossible!"
 (async function meanwhileOnTheFalcon() {
@@ -80,7 +80,7 @@ In queries "undefined" and "null" have different meanings:
 
 Combination of:  
 [eslint - no-undefined](https://eslint.org/docs/latest/rules/no-undefined)  
-[eslint - no-undef-init](https://eslint.org/docs/latest/rules/no-undef-init)  
+[eslint - no-undef-init](https://eslint.org/docs/latest/rules/no-undef-init)
 
 ##### ❌ BAD
 
@@ -126,14 +126,14 @@ Benefits:
 ```javascript
 const IN_BOX = 6;
 const calculatePrice = (itemPrice, count, discount = 1, balance = 0) => (
-  (itemPrice * count * discount) - balance 
+    (itemPrice * count * discount) - balance
 );
 
 const price = calculatePrice(
-  5,
-  IN_BOX,
-  1,
-  10
+    5,
+    IN_BOX,
+    1,
+    10
 );
 ```
 
@@ -141,8 +141,8 @@ const price = calculatePrice(
 
 ```javascript
 const IN_BOX = 6;
-const calculatePrice = ({ itemPrice, count, discount = 1, balance = 0 }) => (
-  (itemPrice * count * discount) - balance 
+const calculatePrice = ({itemPrice, count, discount = 1, balance = 0}) => (
+    (itemPrice * count * discount) - balance
 );
 
 const price = calculatePrice({
@@ -167,9 +167,9 @@ has a number of undesirable consequences:
 ```javascript
 import someVeryLargeAndMultilevelObject from 'strangeObjectsCollection';
 
-const { varFromLevel1: { varFromLevel2: { varFromLevel3: { varFromLevel4 } }} } = someVeryLargeAndMultilevelObject;
+const {varFromLevel1: {varFromLevel2: {varFromLevel3: {varFromLevel4}}}} = someVeryLargeAndMultilevelObject;
 
-const myObj = { varFromLevel1: { varFromLevel2: 111 } };
+const myObj = {varFromLevel1: {varFromLevel2: 111}};
 ```
 
 ##### ✔ GOOD
@@ -189,7 +189,7 @@ in all cases when you don't need context of this particular function.
 ##### ❌ BAD
 
 ```javascript
-function sum ({ a, b }) {
+function sum({a, b}) {
     return a + b;
 }
 ```
@@ -197,7 +197,7 @@ function sum ({ a, b }) {
 ##### ✔ GOOD
 
 ```javascript
-const sum = ({ a, b }) => (a + b); // "sum" is named arrow function which has name in stacktrace
+const sum = ({a, b}) => (a + b); // "sum" is named arrow function which has name in stacktrace
 ```
 
 [Google - JS Styleguide - Features functions arrow functions](https://google.github.io/styleguide/jsguide.html#features-functions-arrow-functions)
@@ -213,24 +213,23 @@ Multiple returns create interrupts in function execution,
 making it harder to find unused code.
 
 [airbnb - single return vs multiple returns](https://github.com/airbnb/javascript/issues/761)  
-[Anthony Steele - Single Return Law](https://www.anthonysteele.co.uk/TheSingleReturnLaw.html)  
+[Anthony Steele - Single Return Law](https://www.anthonysteele.co.uk/TheSingleReturnLaw.html)
 
 ##### Opposite opinion
 
 [Szymon Krajewski - Why should you return early?](https://szymonkrajewski.pl/why-should-you-return-early/)  
-[Early exit - most common deviation from structured programming](https://en.wikipedia.org/wiki/Structured_programming#Early_exit)  
-
+[Early exit - most common deviation from structured programming](https://en.wikipedia.org/wiki/Structured_programming#Early_exit)
 
 ##### ❌ BAD
 
 ```javascript
 const sayMyName = (who) => {
-  if (who === 'David Guetta') {
-    return `${who}: Say my name, say my name\n If you love me, let me hear you.`;
-  } else if (who === 'Breaking Bad') {
-    return `${who}: You all know exactly who I am. Say my name.`
-  }
-  return `${who}: I do not know.`;
+    if (who === 'David Guetta') {
+        return `${who}: Say my name, say my name\n If you love me, let me hear you.`;
+    } else if (who === 'Breaking Bad') {
+        return `${who}: You all know exactly who I am. Say my name.`
+    }
+    return `${who}: I do not know.`;
 };
 ```
 
@@ -238,13 +237,13 @@ const sayMyName = (who) => {
 
 ```javascript
 const sayMyName = (who) => {
-  let partOfText = `${who}: I do not know.`;
-  if (who === 'David Guetta') {
-    partOfText = `${who}: Say my name, say my name\n If you love me, let me hear you.`;
-  } else if (who === 'Breaking Bad') {
-    partOfText = `${who}: You all know exactly who I am. Say my name.`
-  }
-  return partOfText;
+    let partOfText = `${who}: I do not know.`;
+    if (who === 'David Guetta') {
+        partOfText = `${who}: Say my name, say my name\n If you love me, let me hear you.`;
+    } else if (who === 'Breaking Bad') {
+        partOfText = `${who}: You all know exactly who I am. Say my name.`
+    }
+    return partOfText;
 };
 ```
 
@@ -265,14 +264,14 @@ otherwise define public properties and methods in the class body.
 
 ```javascript
 class Basket {
-  constructor () {
-    this.count = 0;
-    this.handleAdd = this.handleAdd.bind(this);
-  }
+    constructor() {
+        this.count = 0;
+        this.handleAdd = this.handleAdd.bind(this);
+    }
 
-  handleAdd({ add }) {
-    this.count += add;
-  }
+    handleAdd({add}) {
+        this.count += add;
+    }
 }
 ```
 
@@ -280,11 +279,11 @@ class Basket {
 
 ```javascript
 class Basket {
-  count = 0;
+    count = 0;
 
-  handleAdd = ({ add }) => {
-    this.count += add;
-  };
+    handleAdd = ({add}) => {
+        this.count += add;
+    };
 }
 ```
 
@@ -303,25 +302,25 @@ Callbacks in some cases can create synchronous chains that block the user interf
 ##### ❌ BAD
 
 ```javascript
-const someAsyncFunction = ({ a, b }, cb) => {
-  const businessLogicValue = a + b;
-  const onEnd = (result, error) => {
-    if(error) {
-      cb(null, error);
-    } else {
-      cb(businessLogicValue * result);
-    }
-  };
-  someCbGlobalIO(businessLogicValue, onEnd)
+const someAsyncFunction = ({a, b}, cb) => {
+    const businessLogicValue = a + b;
+    const onEnd = (result, error) => {
+        if (error) {
+            cb(null, error);
+        } else {
+            cb(businessLogicValue * result);
+        }
+    };
+    someCbGlobalIO(businessLogicValue, onEnd)
 };
 
-const someAsyncFunction = ({ a, b }, cb) => {
-  const businessLogicValue = a + b;
-  someAsyncGlobalIO(businessLogicValue)
-    .then((result) => {
-      cb(businessLogicValue * result);
-    }).catch((error) => {
-      cb(null, error);
+const someAsyncFunction = ({a, b}, cb) => {
+    const businessLogicValue = a + b;
+    someAsyncGlobalIO(businessLogicValue)
+        .then((result) => {
+            cb(businessLogicValue * result);
+        }).catch((error) => {
+        cb(null, error);
     });
 };
 ```
@@ -329,24 +328,24 @@ const someAsyncFunction = ({ a, b }, cb) => {
 ##### ✔ GOOD
 
 ```javascript
-const someAsyncFunction = ({ a, b }) => (
-  new Promise((res, rej) => {
-    const businessLogicValue = a + b;
-    const onEnd = (result, error) => {
-      if(error) {
-        rej(error);
-      } else {
-        res(businessLogicValue * result);
-      }
-    };
-    someCbGlobalIO(businessLogicValue, onEnd)
-  })
+const someAsyncFunction = ({a, b}) => (
+    new Promise((res, rej) => {
+        const businessLogicValue = a + b;
+        const onEnd = (result, error) => {
+            if (error) {
+                rej(error);
+            } else {
+                res(businessLogicValue * result);
+            }
+        };
+        someCbGlobalIO(businessLogicValue, onEnd)
+    })
 );
 
-const someAsyncFunction = async ({ a, b }) => {
-  const businessLogicValue = a + b;
-  const result = await someAsyncGlobalIO(businessLogicValue);
-  return businessLogicValue * result;
+const someAsyncFunction = async ({a, b}) => {
+    const businessLogicValue = a + b;
+    const result = await someAsyncGlobalIO(businessLogicValue);
+    return businessLogicValue * result;
 };
 ```
 
@@ -365,7 +364,7 @@ but all this logs should be removed before code review and merge.
 [CodeGuide - Split Code - Sustain Single Responsibility](./splitCode/sustainSingleResponsibility.md)  
 [CodeGuide - Split Code - Use One "third party API" per file](./splitCode/useOneThirdPartyApiPerFile.md)
 
-[eslint - no-console](https://eslint.org/docs/rules/no-console)  
+[eslint - no-console](https://eslint.org/docs/rules/no-console)
 
 ---
 
@@ -424,14 +423,14 @@ Benefits:
 
 ```javascript
 /**
-* Показать ошибку если страница недоступна
-*/
+ * Показать ошибку если страница недоступна
+ */
 const renderAlert = () => (
-    'الصفحة المطلوبة غير متاحة'
-);
+        'الصفحة المطلوبة غير متاحة'
+    );
 
 const renderWarning = () => (
-  'The field did not pass validation'
+    'The field did not pass validation'
 );
 ```
 
@@ -439,14 +438,14 @@ const renderWarning = () => (
 
 ```javascript
 /**
-* Show error if page not available
-*/
+ * Show error if page not available
+ */
 const renderAlert = () => (
-  translate('ERROR_PAGE_NOT_AVAILABLE')
-);
+        translate('ERROR_PAGE_NOT_AVAILABLE')
+    );
 
 const renderWarning = () => (
-  translate('FIELD_DID_NOT_PASS_VALIDATION')
+    translate('FIELD_DID_NOT_PASS_VALIDATION')
 );
 ```
 
@@ -475,7 +474,7 @@ Eslint is a very important tool in the development. It can be distracting in the
 We are using list of Airbnb rules as common base,  
 all clarifications and differences should be approved with lead developers and added to the document.
 
-[eslint-plugin-unicorn - eslint-disable](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-abusive-eslint-disable.md)  
+[eslint-plugin-unicorn - eslint-disable](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-abusive-eslint-disable.md)
 
 ---
 
@@ -514,24 +513,24 @@ Any asynchronous code must be able to catch errors inside the handler.
 
 ```javascript
 const MyComponent = (props) => {
-  const onClick = useCallback((
-    async () => {
-      await logClick(props.id);
-      await sendMessageToServer(props.id);
-    }
-  ), [props.id]);
-  return (
-    <button onClick={onClick} />
-  );
+    const onClick = useCallback((
+        async () => {
+            await logClick(props.id);
+            await sendMessageToServer(props.id);
+        }
+    ), [props.id]);
+    return (
+        <button onClick={onClick}/>
+    );
 };
 ```
 
 ##### ❌ BAD
 
 ```javascript
-const onClick =  async (event) => {
-  await logClick(event.someDataFromEvent);
-  await sendMessageToServer(event.someDataFromEvent);
+const onClick = async (event) => {
+    await logClick(event.someDataFromEvent);
+    await sendMessageToServer(event.someDataFromEvent);
 };
 
 domElement.addEventListener('click', onClick);
@@ -541,18 +540,18 @@ domElement.addEventListener('click', onClick);
 
 ```javascript
 const MyComponent1 = (props) => {
-  const onClick = useCallback((
-    () => {
-      logClick(props.id)
-        .then(() => (
-          sendMessageToServer(props.id)
-        ))
-        .catch(catchAnyError);
-    }
-  ), [props.id]);
-  return (
-    <button onClick={onClick} />
-  );
+    const onClick = useCallback((
+        () => {
+            logClick(props.id)
+                .then(() => (
+                    sendMessageToServer(props.id)
+                ))
+                .catch(catchAnyError);
+        }
+    ), [props.id]);
+    return (
+        <button onClick={onClick}/>
+    );
 };
 ```
 
@@ -560,28 +559,28 @@ const MyComponent1 = (props) => {
 
 ```javascript
 const MyComponent2 = (props) => {
-  const onClick = useCallback((
-    () => {
-      (async () => {
-        await logClick(props.id);
-        await sendMessageToServer(props.id);
-      })().catch(catchAnyError)
-    }
-  ), [props.id]);
-  return (
-    <button onClick={onClick} />
-  );
+    const onClick = useCallback((
+        () => {
+            (async () => {
+                await logClick(props.id);
+                await sendMessageToServer(props.id);
+            })().catch(catchAnyError)
+        }
+    ), [props.id]);
+    return (
+        <button onClick={onClick}/>
+    );
 };
 ```
 
 ##### ✔ GOOD
 
 ```javascript
-const onClick =  (event) => {
-  (async () => {
-    await logClick(event.someDataFromEvent);
-    await sendMessageToServer(event.someDataFromEvent);
-  })().catch(catchAnyError)
+const onClick = (event) => {
+    (async () => {
+        await logClick(event.someDataFromEvent);
+        await sendMessageToServer(event.someDataFromEvent);
+    })().catch(catchAnyError)
 };
 
 domElement.addEventListener('click', onClick);

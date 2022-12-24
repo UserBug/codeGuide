@@ -1,9 +1,11 @@
 ### Split Code - Remove Duplicates
+
 The presence of duplicates in the code indicates  
 that the same operation has been performed several times in the most non-optimal way.
 Although copying working pieces of code can greatly speed up the development of concepts and projects,  
-it makes maintenance much more difficult later on. 
-* Changes in a repetitive operation have to be made in many files, it is easy to make a mistake. 
+it makes maintenance much more difficult later on.
+
+* Changes in a repetitive operation have to be made in many files, it is easy to make a mistake.
 * It is often difficult to find a specific error location among dozens of copies of an operation.
 
 It is recommended to immediately move repeating blocks into separate functions.  
