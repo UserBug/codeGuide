@@ -4,8 +4,23 @@ Long functions most often indicate the presence of a sequence of
 it can be difficult to understand the long chain of sequential instructions.
 It is recommended to separate sequential instructions into logical blocks  
 and bring them into separate functions.  
+You can choose the number that best suits your project, but the number must be hard-defined.  
 
-`max-nested-callbacks: ["error", { "max": 50, "skipBlankLines": true, "skipComments": true }]`  
+Clean Code by Robert C. Martin: 
+`
+In the eighties we used to say that a function should be no bigger than a screen-full.  
+Of course we said that at a time when VT100 screens were 24 lines by 80 columns,  
+and our editors used 4 lines for administrative purposes.  
+Nowadays with a cranked-down font and a nice big monitor,  
+you can fit 150 characters on a line and a 100 lines or more on a screen.  
+Lines should not be 150 characters long.  
+Functions should not be 100 lines long.  
+Functions should hardly ever be 20 lines long.
+`
+
+
+
+`max-lines-per-function: ["error", { "max": 50, "skipBlankLines": true, "skipComments": true }]`  
 [eslint - max-lines-per-function](https://eslint.org/docs/latest/rules/max-lines-per-function)
 
 ##### ❌ BAD

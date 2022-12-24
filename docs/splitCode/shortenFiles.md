@@ -8,6 +8,7 @@ This will make it very difficult:
 
 The number of lines of code can serve as a trigger for the need to split a file.  
 It is recommended to shorten files to a maximum length of 250 lines.  
+You can choose the number that best suits your project, but the number must be hard-defined.  
 
 To do this, you can turn larger files into folders,  
 moving all independent functions into new small files.
@@ -15,7 +16,7 @@ moving all independent functions into new small files.
 There is no minimum file size limit.
 A file with one function on one line of code is fine.
 
-`max-nested-callbacks: ["error", 250]`  
+`max-lines: ["error", 250]`  
 [eslint - max-lines](https://eslint.org/docs/latest/rules/max-lines)  
 
 ##### ❌ BAD
