@@ -212,6 +212,7 @@ Easier to debug and easier to modify.
 Multiple returns create interrupts in function execution,  
 making it harder to find unused code.
 
+[airbnb - single return vs multiple returns](https://github.com/airbnb/javascript/issues/761)  
 [Anthony Steele - Single Return Law](https://www.anthonysteele.co.uk/TheSingleReturnLaw.html)  
 
 ##### Opposite opinion
@@ -246,8 +247,6 @@ const sayMyName = (who) => {
   return partOfText;
 };
 ```
-
-[airbnb - single return vs multiple returns](https://github.com/airbnb/javascript/issues/761)
 
 ---
 
