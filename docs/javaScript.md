@@ -212,6 +212,14 @@ Easier to debug and easier to modify.
 Multiple returns create interrupts in function execution,  
 making it harder to find unused code.
 
+[Anthony Steele - Single Return Law](https://www.anthonysteele.co.uk/TheSingleReturnLaw.html)  
+
+##### Opposite opinion
+
+[Szymon Krajewski - Why should you return early?](https://szymonkrajewski.pl/why-should-you-return-early/)  
+[Early exit - most common deviation from structured programming](https://en.wikipedia.org/wiki/Structured_programming#Early_exit)  
+
+
 ##### ❌ BAD
 
 ```javascript
