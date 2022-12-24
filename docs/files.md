@@ -64,7 +64,7 @@ All files and folders should have names that describe content.
 
 ---
 
-### Group files by modules and not by type
+### Group files by modules and not by type - Screaming Architecture
 
 Much more often it is necessary to modify one particular module than all files with constants in the project. Therefore:
 
@@ -72,6 +72,8 @@ Much more often it is necessary to modify one particular module than all files w
 * Repeatedly simplifies the replacement/modification of structure in the module.
 * Each module becomes independent, and can be implemented using a different architecture that better meets the
   requirements.
+
+[Screaming Architecture - Uncle Bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html)  
 
 ##### ❌ BAD
 
