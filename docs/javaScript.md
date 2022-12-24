@@ -362,7 +362,10 @@ Any ticket cannot be closed if there exist those messages in the console.
 Showing some debug data in the consol it is helpful,  
 but all this logs should be removed before code review and merge.
 
-[eslint - no-console](https://eslint.org/docs/rules/no-console)
+[CodeGuide - Split Code - Sustain Single Responsibility](./splitCode/sustainSingleResponsibility.md)  
+[CodeGuide - Split Code - Use One "third party API" per file](./splitCode/useOneThirdPartyApiPerFile.md)
+
+[eslint - no-console](https://eslint.org/docs/rules/no-console)  
 
 ---
 
