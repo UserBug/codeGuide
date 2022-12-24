@@ -16,6 +16,19 @@ moving all independent functions into new small files.
 There is no minimum file size limit.
 A file with one function on one line of code is fine.
 
+[Eric Raymond's "The Art Of Unix Programming" - Encapsulation and Optimal Module Size:](http://catb.org/esr/writings/taoup/html/ch04s01.html)  
+_In nonmathematical terms, Hatton's empirical results imply a sweet spot between 200 and 400 logical lines of code  
+that minimizes probable defect density, all other factors (such as programmer skill) being equal.  
+This size is independent of the language being used — an observation which strongly reinforces the advice  
+given elsewhere in this book to program with the most powerful languages and tools you can.  
+Beware of taking these numbers too literally however.  
+Methods for counting lines of code vary considerably according to what the analyst considers a logical line,  
+and other biases (such as whether comments are stripped).  
+Hatton himself suggests as a rule of thumb a 2x conversion between logical and physical lines,  
+suggesting an optimal range of 400–800 physical lines._  
+
+[Rule of 30 – When is a Method, Class or Subsystem Too Big](https://levelup.gitconnected.com/javascript-code-styling-best-practices-maximum-depth-and-lines-e89bd591186c)  
+
 `max-lines: ["error", 250]`  
 [eslint - max-lines](https://eslint.org/docs/latest/rules/max-lines)  
 
