@@ -3,17 +3,17 @@ This guide contains a set of guidelines for developers.
 The purpose of which is to identify common patterns of bad coding  
 and suggest a better approach.
 
-v1.0.0
+v2.0.0
 
-* [Git](https://github.com/UserBug/codeGuide/blob/v1.0.0/docs/git.md)
-* [Naming convention](https://github.com/UserBug/codeGuide/blob/v1.0.0/docs/namingConvention.md)
-* [Files](https://github.com/UserBug/codeGuide/blob/v1.0.0/docs/files.md)
-* [Common JavaScript](https://github.com/UserBug/codeGuide/blob/v1.0.0/docs/javaScript.md)
-* [React](https://github.com/UserBug/codeGuide/blob/v1.0.0/docs/react.md)
-* [React Hooks](https://github.com/UserBug/codeGuide/blob/v1.0.0/docs/reactHooks.md)
-* [React Component testing](https://github.com/UserBug/codeGuide/blob/v1.0.0/docs/reactComponentTesting.md)
-* [Styles](https://github.com/UserBug/codeGuide/blob/v1.0.0/docs/styles.md)
-* [Split Code](https://github.com/UserBug/codeGuide/blob/v1.0.0/docs/splitCode/index.md)
+* [Git](https://github.com/UserBug/codeGuide/blob/v2/docs/git.md)
+* [Naming convention](https://github.com/UserBug/codeGuide/blob/v2/docs/namingConvention.md)
+* [Files](https://github.com/UserBug/codeGuide/blob/v2/docs/files.md)
+* [JavaScript](https://github.com/UserBug/codeGuide/blob/v2/docs/javaScript/index.md)
+* [React](https://github.com/UserBug/codeGuide/blob/v2/docs/react.md)
+* [React Hooks](https://github.com/UserBug/codeGuide/blob/v2/docs/reactHooks.md)
+* [React Component testing](https://github.com/UserBug/codeGuide/blob/v2/docs/reactComponentTesting.md)
+* [Styles](https://github.com/UserBug/codeGuide/blob/v2/docs/styles.md)
+* [Split Code](https://github.com/UserBug/codeGuide/blob/v2/docs/splitCode/index.md)
 
 Tools:
 * [ESLint Playground](
