@@ -13,9 +13,9 @@ all clarifications and differences should be approved with lead developers and a
 
 [eslint-plugin-unicorn - eslint-disable](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-abusive-eslint-disable.md)
 
-[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/blob/v2/docs/javaScript/index.md)
+[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript/index.md)
 
-[Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/blob/v2)
+[Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
 
 ---
 Copyright © 2017 Stanislav Kochenkov 

@@ -5,15 +5,15 @@ and suggest a better approach.
 
 v2.0.0
 
-* [Git](https://github.com/UserBug/codeGuide/blob/v2/docs/git.md)
-* [Naming convention](https://github.com/UserBug/codeGuide/blob/v2/docs/namingConvention.md)
-* [Files](https://github.com/UserBug/codeGuide/blob/v2/docs/files.md)
-* [JavaScript](https://github.com/UserBug/codeGuide/blob/v2/docs/javaScript/index.md)
-* [React](https://github.com/UserBug/codeGuide/blob/v2/docs/react.md)
-* [React Hooks](https://github.com/UserBug/codeGuide/blob/v2/docs/reactHooks.md)
-* [React Component testing](https://github.com/UserBug/codeGuide/blob/v2/docs/reactComponentTesting.md)
-* [Styles](https://github.com/UserBug/codeGuide/blob/v2/docs/styles.md)
-* [Split Code](https://github.com/UserBug/codeGuide/blob/v2/docs/splitCode/index.md)
+* [Git](https://github.com/UserBug/codeGuide/tree/v2/docs/git.md)
+* [Naming convention](https://github.com/UserBug/codeGuide/tree/v2/docs/namingConvention.md)
+* [Files](https://github.com/UserBug/codeGuide/tree/v2/docs/files.md)
+* [JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript/index.md)
+* [React](https://github.com/UserBug/codeGuide/tree/v2/docs/react.md)
+* [React Hooks](https://github.com/UserBug/codeGuide/tree/v2/docs/reactHooks.md)
+* [React Component testing](https://github.com/UserBug/codeGuide/tree/v2/docs/reactComponentTesting.md)
+* [Styles](https://github.com/UserBug/codeGuide/tree/v2/docs/styles.md)
+* [Split Code](https://github.com/UserBug/codeGuide/tree/v2/docs/splitCode/index.md)
 
 Tools:
 * [ESLint Playground](

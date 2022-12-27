@@ -16,11 +16,11 @@
 
 **Summary:** The choice between TypeScript and JavaScript most of all depends on your taste preferences.
 
-Related: [CodeGuide - JavaScript - JSDoc for static typing](https://github.com/UserBug/codeGuide/blob/v2/docs/javaScript/jsDocForStaticTyping.md)  
+Related: [CodeGuide - JavaScript - JSDoc for static typing](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript/jsDocForStaticTyping.md)  
 
-[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/blob/v2/docs/javaScript/index.md)
+[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript/index.md)
 
-[Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/blob/v2)
+[Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
 
 ---
 Copyright © 2017 Stanislav Kochenkov 

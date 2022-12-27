@@ -82,9 +82,9 @@ const moveSecondsСlockHand = (seconds) => {
 };
 ```
 
-[Back to CodeGuide - Split Code](https://github.com/UserBug/codeGuide/blob/v2/docs/splitCode/index.md)
+[Back to CodeGuide - Split Code](https://github.com/UserBug/codeGuide/tree/v2/docs/splitCode/index.md)
 
-[Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/blob/v2)
+[Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
 
 ---
 Copyright © 2017 Stanislav Kochenkov 

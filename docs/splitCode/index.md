@@ -28,7 +28,7 @@ All approaches described here are aimed at reducing the overall complexity in ea
 
 ### Move Out Nested callbacks
 
-[Move Out Nested callbacks - read more](https://github.com/UserBug/codeGuide/blob/v2/docs/splitCode/moveOutNestedCallbacks.md)  
+[Move Out Nested callbacks - read more](https://github.com/UserBug/codeGuide/tree/v2/docs/splitCode/moveOutNestedCallbacks.md)  
 It is recommended to allow only 1 level of nesting.
 Deeper nesting can be fixed by
 [Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) through
@@ -38,7 +38,7 @@ Deeper nesting can be fixed by
 
 ### Reduce Heavy nesting
 
-[Reduce Heavy nesting - read more](https://github.com/UserBug/codeGuide/blob/v2/docs/splitCode/reduceHeavyNesting.md)  
+[Reduce Heavy nesting - read more](https://github.com/UserBug/codeGuide/tree/v2/docs/splitCode/reduceHeavyNesting.md)  
 It is recommended to allow only 2 level of nesting,  
 move the logic into separate new functions and methods.
 
@@ -46,7 +46,7 @@ move the logic into separate new functions and methods.
 
 ### Remove Duplicates
 
-[Remove Duplicates - read more](https://github.com/UserBug/codeGuide/blob/v2/docs/splitCode/removeDuplicates.md)  
+[Remove Duplicates - read more](https://github.com/UserBug/codeGuide/tree/v2/docs/splitCode/removeDuplicates.md)  
 It is recommended to immediately move duplicated blocks into separate functions.  
 And strive to reduce the metric indicating the number of duplicates.
 
@@ -54,7 +54,7 @@ And strive to reduce the metric indicating the number of duplicates.
 
 ### Shorten Files
 
-[Shorten Files - read more](https://github.com/UserBug/codeGuide/blob/v2/docs/splitCode/shortenFiles.md)  
+[Shorten Files - read more](https://github.com/UserBug/codeGuide/tree/v2/docs/splitCode/shortenFiles.md)  
 The number of lines of code can serve as a trigger for the need to split a file.  
 It is recommended to shorten files to a maximum length of 250 lines.  
 To do this, you can turn larger files into folders,  
@@ -64,7 +64,7 @@ moving all independent functions into new small files.
 
 ### Slice Long Functions
 
-[Slice Long Functions - read more](https://github.com/UserBug/codeGuide/blob/v2/docs/splitCode/sliceLongFunctions.md)  
+[Slice Long Functions - read more](https://github.com/UserBug/codeGuide/tree/v2/docs/splitCode/sliceLongFunctions.md)  
 It can be difficult to understand the long chain of sequential instructions.
 It is recommended to separate sequential instructions into logical blocks  
 and bring them into separate functions.
@@ -73,7 +73,7 @@ and bring them into separate functions.
 
 ### Use One "third party API" per file
 
-[Use One "third party API" per file - read more](https://github.com/UserBug/codeGuide/blob/v2/docs/splitCode/useOneThirdPartyApiPerFile.md)  
+[Use One "third party API" per file - read more](https://github.com/UserBug/codeGuide/tree/v2/docs/splitCode/useOneThirdPartyApiPerFile.md)  
 Transferring the direct use of third-party libraries and APIs into separate modules (Adapters)  
 helps to isolate the business logic from the implementation details of the tools.
 
@@ -81,7 +81,7 @@ helps to isolate the business logic from the implementation details of the tools
 
 ### Sustain Single Responsibility
 
-[Sustain Single Responsibility - read more](https://github.com/UserBug/codeGuide/blob/v2/docs/splitCode/sustainSingleResponsibility.md)  
+[Sustain Single Responsibility - read more](https://github.com/UserBug/codeGuide/tree/v2/docs/splitCode/sustainSingleResponsibility.md)  
 By creating and dedicating one simple and clear task to each function, you simultaneously:
 
 * Make it easier to understand
@@ -202,7 +202,7 @@ const compareTwoPages = async ({pageOneId, pageTwoId}) => {
 }
 ```
   
-[Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/blob/v2)
+[Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
 
 ---
 Copyright © 2017 Stanislav Kochenkov 
