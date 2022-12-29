@@ -28,7 +28,7 @@ This unifies the code, makes it more understandable and speeds up development.
 Although all rules are written as transparently as possible with clearly defined criteria,  
 it is still necessary to first understand their spirit.  
 Implementing a rule in your design is much more important than the absolute value specified in it.  
-For example, you may consider the limit on the size of a file more than 400 lines to be too strict,  
+For example, you may consider the limit on the size of a file more than 400 lines to be too harsh,  
 but you will definitely agree that its size cannot be infinite and requires a limit.  
 
 ### 80/20
