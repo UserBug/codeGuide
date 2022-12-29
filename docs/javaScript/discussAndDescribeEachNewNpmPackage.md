@@ -9,7 +9,7 @@ This information allows us to understand all project dependencies.
 Next developers can understand tools which are already in the project, and not to add new one.  
 If some package will require update or replacement, information will help to find a better solution.
 
-[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript/index.md)
+[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
 
 [Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
 

@@ -24,7 +24,7 @@ import someVeryLargeAndMultilevelObject from 'strangeObjectsCollection';
 const varFromLevel4 = someVeryLargeAndMultilevelObject.varFromLevel1.varFromLevel2.varFromLevel3.varFromLevel4;
 ```
   
-[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript/index.md)  
+[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)  
   
 [Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)  
 

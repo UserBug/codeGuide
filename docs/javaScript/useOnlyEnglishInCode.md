@@ -40,7 +40,7 @@ const renderWarning = () => (
 );
 ```
 
-[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript/index.md)
+[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
 
 [Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
 

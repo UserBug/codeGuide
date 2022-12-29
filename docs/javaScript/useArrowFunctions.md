@@ -20,7 +20,7 @@ function sum({a, b}) {
 const sum = ({a, b}) => (a + b); // "sum" is named arrow function which has name in stacktrace
 ```
 
-[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript/index.md)
+[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
 
 [Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
 

@@ -13,7 +13,7 @@ but all this logs should be removed before code review and merge.
 
 [eslint - no-console](https://eslint.org/docs/rules/no-console)
 
-[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript/index.md)
+[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
 
 [Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
 
