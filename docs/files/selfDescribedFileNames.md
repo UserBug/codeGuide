@@ -32,9 +32,9 @@ All files and folders should have names that describe content.
 
 ---
 
-[Back to CodeGuide - Files](https://github.com/UserBug/codeGuide/tree/v2/docs/files)
+[Back to Code Guide - Files](https://github.com/UserBug/codeGuide/tree/v2/docs/files)
 
-[Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
+[Back to Code Guide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
 
 ---
 Copyright © 2017 Stanislav Kochenkov 

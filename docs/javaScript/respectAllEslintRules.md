@@ -15,9 +15,9 @@ all clarifications and differences should be approved with lead developers and a
 
 ---
 
-[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
+[Back to Code Guide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
 
-[Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
+[Back to Code Guide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
 
 ---
 Copyright © 2017 Stanislav Kochenkov 

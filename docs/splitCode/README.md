@@ -202,7 +202,7 @@ const compareTwoPages = async ({pageOneId, pageTwoId}) => {
 }
 ```
   
-[Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
+[Back to Code Guide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
 
 ---
 Copyright © 2017 Stanislav Kochenkov 

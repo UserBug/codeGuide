@@ -10,9 +10,9 @@ Blocks of code in the commentaries make it very difficult to read it and unneces
 
 ---
 
-[Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
+[Back to Code Guide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
 
-[Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
+[Back to Code Guide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
 
 ---
 Copyright © 2017 Stanislav Kochenkov 
