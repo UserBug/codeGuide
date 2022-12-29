@@ -5,7 +5,7 @@ and suggest a better approach.
 
 * [Git](https://github.com/UserBug/codeGuide/tree/v2/docs/git.md)
 * [Naming convention](https://github.com/UserBug/codeGuide/tree/v2/docs/namingConvention.md)
-* [Files](https://github.com/UserBug/codeGuide/tree/v2/docs/files.md)
+* [Files](https://github.com/UserBug/codeGuide/tree/v2/docs/files)
 * [JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
 * [React](https://github.com/UserBug/codeGuide/tree/v2/docs/react.md)
 * [React Hooks](https://github.com/UserBug/codeGuide/tree/v2/docs/reactHooks.md)
