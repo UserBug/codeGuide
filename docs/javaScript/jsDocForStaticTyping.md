@@ -15,6 +15,8 @@ Benefits of JSDoc:
 [eslint - require-jsdoc](https://eslint.org/docs/rules/require-jsdoc)  
 [Type Safe JavaScript and TypeScript with JSDoc](https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76)
 
+---
+
 [Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
 
 [Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)

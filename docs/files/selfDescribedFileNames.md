@@ -15,6 +15,9 @@ All files and folders should have names that describe content.
 * "hoc" (use name of React class),
 * "middleware" (use type of middleware or what it do)
 
+[eslint-plugin-unicorn - filename-case](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md)  
+[eslint-plugin-unicorn - no-empty-file](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-empty-file.md)
+
 ```json
 "unicorn/filename-case": [
 	"error",
@@ -26,9 +29,6 @@ All files and folders should have names that describe content.
 	}
 ]
 ```
-
-[eslint-plugin-unicorn - filename-case](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md)  
-[eslint-plugin-unicorn - no-empty-file](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-empty-file.md)
 
 ---
 

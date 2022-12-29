@@ -20,6 +20,8 @@
 It is recommended to use as a common rules:  
 [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)  
 
+---
+
 [Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)  
 
 ---

@@ -7,6 +7,8 @@
 * [Separate exports](https://github.com/UserBug/codeGuide/tree/v2/docs/files/separateExports.md)  
 * [Support only case sensitive path](https://github.com/UserBug/codeGuide/tree/v2/docs/files/supportOnlyCaseSensitivePath.md)  
 
+---
+
 [Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)  
 
 ---

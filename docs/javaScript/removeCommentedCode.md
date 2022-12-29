@@ -8,6 +8,8 @@ Blocks of code in the commentaries make it very difficult to read it and unneces
 
 [eslint-plugin-etc - no-commented-out-code](https://github.com/cartant/eslint-plugin-etc/blob/main/docs/rules/no-commented-out-code.md)
 
+---
+
 [Back to CodeGuide - JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
 
 [Back to CodeGuide - Readme](https://github.com/UserBug/codeGuide/tree/v2)
