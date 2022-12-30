@@ -1,4 +1,4 @@
-### Split Code - Shorten Files
+## Split Code - Shorten Files
 
 Imagine a project in which all the source code is compiled into one file of 25,000 lines.  
 This will make it very difficult:

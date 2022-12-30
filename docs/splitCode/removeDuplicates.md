@@ -1,4 +1,4 @@
-### Split Code - Remove Duplicates
+## Split Code - Remove Duplicates
 
 The presence of duplicates in the code indicates  
 that the same operation has been performed several times in the most non-optimal way.

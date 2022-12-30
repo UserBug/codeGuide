@@ -1,4 +1,4 @@
-### Split Code - Reduce Heavy nesting
+## Split Code - Reduce Heavy nesting
 
 Operators that increase the nesting of logic:  
 `if for while switch`  

@@ -1,4 +1,4 @@
-## Screaming Architecture - Group files by modules and not by type
+## Files - Screaming Architecture - Group files by modules and not by type
 
 Much more often it is necessary to modify one particular module than all files with constants in the project. Therefore:
 

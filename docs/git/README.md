@@ -1,6 +1,5 @@
 ## Git
 
-
 ### Basic Foundation
 
 Any branching strategies or approaches adopted in the repository should extend from the Basic Foundation:

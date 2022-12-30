@@ -1,4 +1,4 @@
-### Split Code - Use One "third party API" per file
+## Split Code - Use One "third party API" per file
 
 This rule is a strong simplification of one of the principles of Hexagonal architecture.  
 Transferring the direct use of third-party libraries and APIs into separate modules (Adapters)  

@@ -1,4 +1,4 @@
-## Support only case sensitive path
+## Files - Support only case-sensitive path
 
 According to the naming convention, register is an extremely important part of the name.  
 For example, "User" is a class, and "user" is an instance of the class "User."

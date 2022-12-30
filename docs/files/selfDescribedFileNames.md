@@ -1,4 +1,4 @@
-## Self described file names
+## Files - Self described file names
 
 All files and folders should have names that describe content.
 

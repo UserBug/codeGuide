@@ -1,4 +1,4 @@
-## Don't use JSX extension
+## Files - Don't use JSX extension
 
 For example, we have 2 files in the "lib" folder: "MyClass.jsx" and "MyClass.js".  
 After compilation both of these files become "MyClass.js", which can lead to errors when using this file in the code.  

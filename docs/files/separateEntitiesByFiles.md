@@ -1,4 +1,4 @@
-## Separate entities by files
+## Files - Separate entities by files
 
 If your logic requires more than 400 lines of code, it's time to think about splitting it into a couple of files.
 For example: move all constants to file "constants.js", move large functions to separate files, move validations.

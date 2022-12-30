@@ -1,4 +1,4 @@
-## Recommended workflow for Feature
+## Git - Recommended workflow for Feature
 
 1. The task is taken for development in the current iteration.
 2. __Developer__ creates a feature branch through issue tracking systems (JIRA) from develop branch.

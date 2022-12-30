@@ -1,4 +1,4 @@
-## Commit message should start with ticket ID
+## Git - Commit message should start with ticket ID
 
 If there is a ticket id in the comment name, it will be displayed on the page of ticket in issue tracking system.  
 Most modern editors allow you to do this automatically, or you can add git pre commit hook:  

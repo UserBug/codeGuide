@@ -1,4 +1,4 @@
-## Recommended workflow for Integration
+## Git - Recommended workflow for Integration
 
 It is recommended to use the integration branch  
 if the work involves the development of changes by several developers in parallel  

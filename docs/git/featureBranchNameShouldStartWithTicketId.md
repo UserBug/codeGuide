@@ -1,4 +1,4 @@
-## Feature branch name should start with ticket id
+## Git - Feature branch name should start with ticket id
 
 Availability of ticket id in name of the feature branch,  
 allows people and issue tracking systems (JIRA) find and show valid links to the branch in Git repo.  

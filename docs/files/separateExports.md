@@ -1,4 +1,4 @@
-## Separate exports
+## Files - Separate exports
 
 If the file contains many independent entities, export them independently.  
 This will allow the collector to make the TreeShacking and reduce the size of the final file.

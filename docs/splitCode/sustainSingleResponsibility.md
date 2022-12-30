@@ -1,4 +1,4 @@
-### Split Code - Sustain Single Responsibility
+## Split Code - Sustain Single Responsibility
 
 Single Responsibility is one of key programing principals included to [SOLID](https://en.wikipedia.org/wiki/SOLID)  
 this approach helps get rid of one of the worst and most common [God object](https://en.wikipedia.org/wiki/God_object)

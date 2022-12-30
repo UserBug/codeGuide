@@ -1,4 +1,4 @@
-### Split Code - Slice Long Functions
+## Split Code - Slice Long Functions
 
 Long functions most often indicate the presence of a sequence of
 [Imperative programming](https://en.wikipedia.org/wiki/Imperative_programming) in them,  
