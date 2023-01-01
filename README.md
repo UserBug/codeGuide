@@ -3,6 +3,8 @@ This guide contains a set of guidelines for developers.
 The purpose of which is to identify common patterns of bad coding  
 and suggest a better approach.
 
+### v2
+
 * [Naming convention](https://github.com/UserBug/codeGuide/tree/v2/docs/namingConvention)
 * [Files](https://github.com/UserBug/codeGuide/tree/v2/docs/files)
 * [JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
