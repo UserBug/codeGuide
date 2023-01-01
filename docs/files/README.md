@@ -5,7 +5,7 @@
 * [Self described file names](https://github.com/UserBug/codeGuide/tree/v2/docs/files/selfDescribedFileNames.md)  
 * [Separate entities by files](https://github.com/UserBug/codeGuide/tree/v2/docs/files/separateEntitiesByFiles.md)  
 * [Separate exports](https://github.com/UserBug/codeGuide/tree/v2/docs/files/separateExports.md)  
-* [Support only case sensitive path](https://github.com/UserBug/codeGuide/tree/v2/docs/files/supportOnlyCaseSensitivePath.md)  
+* [Support only case-sensitive path](https://github.com/UserBug/codeGuide/tree/v2/docs/files/supportOnlyCaseSensitivePath.md)  
 
 ---
 

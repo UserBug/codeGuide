@@ -3,14 +3,14 @@ This guide contains a set of guidelines for developers.
 The purpose of which is to identify common patterns of bad coding  
 and suggest a better approach.
 
-* [Git](https://github.com/UserBug/codeGuide/tree/v2/docs/git)
 * [Naming convention](https://github.com/UserBug/codeGuide/tree/v2/docs/namingConvention)
 * [Files](https://github.com/UserBug/codeGuide/tree/v2/docs/files)
 * [JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
-* [React](https://github.com/UserBug/codeGuide/tree/v2/docs/)
-* [React Component testing](https://github.com/UserBug/codeGuide/tree/v2/docs/reactComponentTesting.md)
-* [Styles](https://github.com/UserBug/codeGuide/tree/v2/docs/styles.md)
 * [Split Code](https://github.com/UserBug/codeGuide/tree/v2/docs/splitCode)
+* [React](https://github.com/UserBug/codeGuide/tree/v2/docs/)
+* [React Component testing](https://github.com/UserBug/codeGuide/tree/v2/docs/reactComponentTesting)
+* [Styles](https://github.com/UserBug/codeGuide/tree/v2/docs/styles.md)
+* [Git](https://github.com/UserBug/codeGuide/tree/v2/docs/git)
 
 ### Who can use these rules
 If you are a junior or middle developer and want to improve the quality of your code,  
