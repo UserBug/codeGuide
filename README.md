@@ -9,7 +9,7 @@ and suggest a better approach.
 * [Files](https://github.com/UserBug/codeGuide/tree/v2/docs/files)
 * [JavaScript](https://github.com/UserBug/codeGuide/tree/v2/docs/javaScript)
 * [Split Code](https://github.com/UserBug/codeGuide/tree/v2/docs/splitCode)
-* [React](https://github.com/UserBug/codeGuide/tree/v2/docs/)
+* [React](https://github.com/UserBug/codeGuide/tree/v2/docs/react)
 * [React Component testing](https://github.com/UserBug/codeGuide/tree/v2/docs/reactComponentTesting)
 * [Styles](https://github.com/UserBug/codeGuide/tree/v2/docs/styles)
 * [Git](https://github.com/UserBug/codeGuide/tree/v2/docs/git)
